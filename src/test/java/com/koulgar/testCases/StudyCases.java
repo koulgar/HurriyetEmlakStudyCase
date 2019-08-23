@@ -1,5 +1,6 @@
 package com.koulgar.testCases;
 
+import com.koulgar.pages.AdvertizementPage;
 import com.koulgar.pages.HomePage;
 import com.koulgar.pages.SearchResultsPage;
 import org.openqa.selenium.Platform;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 public class StudyCases {
 
@@ -25,6 +27,7 @@ public class StudyCases {
 
     HomePage homePage;
     SearchResultsPage searchResultsPage;
+    AdvertizementPage advertizementPage;
 
     @BeforeTest
     public void setup() throws MalformedURLException {
@@ -32,15 +35,17 @@ public class StudyCases {
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setBrowserName("chrome");
         capabilities.setPlatform(Platform.LINUX);
-        capabilities.setCapability("screenResolution", "1920x1080");
+        capabilities.setCapability("screenResolution", "1366x768");
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://www.hurriyetemlak.com/");
-        driver.manage().window().maximize();
     }
 
     @Test(priority = 1)
     public void testCase1() throws InterruptedException {
+        //Navigate to hurriyetemlak.com and maximize window
+        driver.get("https://www.hurriyetemlak.com/");
+        driver.manage().window().maximize();
+
         //Create "HomePage" Objects
         homePage = new HomePage(driver);
 
@@ -53,6 +58,18 @@ public class StudyCases {
         //Select an advertizement that contains "NG"
         searchResultsPage.selectAdvertizement();
 
+        //Create "AdvertizementPage" Objects
+        advertizementPage = new AdvertizementPage(driver);
+
+        //Reveal and get Phone Number
+        String phoneNumber = advertizementPage.getPhoneNumber();
+        Pattern pattern = Pattern.compile("(([\\+]90?)|([0]?))([ ]?)((\\([0-9]{3}\\))|([0-9]{3}))([ ]?)([0-9]{3})(\\s*[\\-]?)([0-9]{2})(\\s*[\\-]?)([0-9]{2})");
+
+        //Check if phoneNumber variable has an actual phone number
+        Assert.assertTrue(pattern.matcher(phoneNumber).matches());
+
+        //Print found phone number
+        System.out.println("Phone number of advert : " + phoneNumber);
     }
 
     @AfterTest

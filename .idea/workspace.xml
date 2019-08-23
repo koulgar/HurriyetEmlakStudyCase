@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,6 +33,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last.edited.regexp" value="0 (541) 794 74 60" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TwitterUserTest/WebDrivers/selenium-server-standalone-3.9.1.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -58,8 +60,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.StudyCases (2)">
-    <configuration name="StudyCases (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.StudyCases.testCase1">
+    <configuration name="StudyCases (2)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
         <pattern>
@@ -76,7 +78,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudyCases (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="StudyCases (3)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HurriyetEmlakStudyCases" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.koulgar.testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudyCases (4)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
         <pattern>
@@ -128,29 +147,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.koulgar.testCases" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="HurriyetEmlakStudyCases" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.koulgar.testCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.StudyCases.testCase1" />
+        <item itemvalue="TestNG.StudyCases (4)" />
+        <item itemvalue="TestNG.StudyCases (3)" />
         <item itemvalue="TestNG.StudyCases (2)" />
         <item itemvalue="TestNG.StudyCases" />
-        <item itemvalue="TestNG.StudyCases.testCase1" />
-        <item itemvalue="TestNG.StudyCases (1)" />
-        <item itemvalue="TestNG.com.koulgar.testCases" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +167,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566577430881</updated>
-      <workItem from="1566577432042" duration="5659000" />
+      <workItem from="1566577432042" duration="10200000" />
     </task>
     <servers />
   </component>
