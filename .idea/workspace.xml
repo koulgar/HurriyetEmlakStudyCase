@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/selenium_server_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/koulgar/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/koulgar/testCases/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,18 +14,34 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PpiRWWeVoDRaX3aZkREfzXuFiZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TwitterUserTest/WebDrivers/selenium-server-standalone-3.9.1.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -45,7 +58,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.StudyCases">
+  <component name="RunManager" selected="TestNG.StudyCases (2)">
+    <configuration name="StudyCases (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HurriyetEmlakStudyCases" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.koulgar.testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudyCases (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HurriyetEmlakStudyCases" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.koulgar.testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StudyCases" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
@@ -57,6 +104,24 @@
       <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
       <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudyCases.testCase1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="HurriyetEmlakStudyCases" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.koulgar.testCases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="METHOD_NAME" value="testCase1" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -81,7 +146,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.StudyCases (2)" />
         <item itemvalue="TestNG.StudyCases" />
+        <item itemvalue="TestNG.StudyCases.testCase1" />
+        <item itemvalue="TestNG.StudyCases (1)" />
         <item itemvalue="TestNG.com.koulgar.testCases" />
       </list>
     </recent_temporary>
@@ -96,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566577430881</updated>
-      <workItem from="1566577432042" duration="453000" />
+      <workItem from="1566577432042" duration="5659000" />
     </task>
     <servers />
   </component>

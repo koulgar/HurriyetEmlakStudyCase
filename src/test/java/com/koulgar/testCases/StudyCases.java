@@ -1,7 +1,11 @@
 package com.koulgar.testCases;
 
+import com.koulgar.pages.HomePage;
+import com.koulgar.pages.SearchResultsPage;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -17,6 +21,10 @@ public class StudyCases {
 
     private WebDriver driver;
     private String nodeUrl;
+    private Actions actions;
+
+    HomePage homePage;
+    SearchResultsPage searchResultsPage;
 
     @BeforeTest
     public void setup() throws MalformedURLException {
@@ -31,9 +39,20 @@ public class StudyCases {
         driver.manage().window().maximize();
     }
 
-    @Test
-    public void simpleTest() {
-        Assert.assertTrue(driver.getTitle().contains("Hürriyet Emlak"));
+    @Test(priority = 1)
+    public void testCase1() throws InterruptedException {
+        //Create "HomePage" Objects
+        homePage = new HomePage(driver);
+
+        //Make a search on home page
+        homePage.searchForAdvertizement("NG Residence");
+
+        //Create "SearchResultsPage" Objects
+        searchResultsPage = new SearchResultsPage(driver);
+
+        //Select an advertizement that contains "NG"
+        searchResultsPage.selectAdvertizement();
+
     }
 
     @AfterTest
