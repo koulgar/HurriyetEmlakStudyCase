@@ -1,4 +1,4 @@
-package com.koulgar;
+package com.koulgar.testCases;
 
 /**
  * Hello world!
