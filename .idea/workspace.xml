@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -167,7 +165,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566577430881</updated>
-      <workItem from="1566577432042" duration="10200000" />
+      <workItem from="1566577432042" duration="23979000" />
     </task>
     <servers />
   </component>
