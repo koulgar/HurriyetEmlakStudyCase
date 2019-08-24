@@ -21,11 +21,8 @@ public class SearchResultsPage {
     private HelperMethods helperMethods;
     private JavascriptExecutor js;
 
-    @FindBy(xpath = "//a[contains(@title,\"NG\")]")
-    private WebElement ngResidenceAdvertLink;
-
     @FindBy(xpath = "//*[@id=\"listview\"]/div[3]")
-    private WebElement filteredSearchAdvertLink;
+    private WebElement firstAdvertOnList;
 
     public SearchResultsPage(WebDriver driver) {
         System.out.println("Creating \"SearchResultPage\" Objects..");
@@ -33,14 +30,18 @@ public class SearchResultsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void selectAdvertizement() {
+    public void selectAdvert() {
         System.out.println("Selecting proper advert");
         actions = new Actions(driver);
+        js = (JavascriptExecutor) driver;
+
+        //Scroll page down
+        js.executeScript("window.scrollBy(0,300);");
 
         //Selecting proper advert
-        actions.moveToElement(ngResidenceAdvertLink).perform();
-        this.ngResidenceAdvertLink = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(ngResidenceAdvertLink));
-        actions.click(ngResidenceAdvertLink).perform();
+        this.firstAdvertOnList = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(firstAdvertOnList));
+        actions.moveToElement(firstAdvertOnList).perform();
+        actions.click(firstAdvertOnList).perform();
     }
 
     public List<String> getAdvertInfo() {
@@ -53,11 +54,11 @@ public class SearchResultsPage {
         js.executeScript("window.scrollBy(0,300);");
 
         //Selecting filtered advert result
-        this.filteredSearchAdvertLink = helperMethods.driverWait(10, filteredSearchAdvertLink);
-        actions.moveToElement(filteredSearchAdvertLink).perform();
+        this.firstAdvertOnList = helperMethods.driverWait(10, firstAdvertOnList);
+        actions.moveToElement(firstAdvertOnList).perform();
 
         //Getting texts from web elements of advert
-        List<WebElement> results = filteredSearchAdvertLink.findElements(By.xpath("./div/div/ul//li"));
+        List<WebElement> results = firstAdvertOnList.findElements(By.xpath("./div/div/ul//li"));
         List<String> resultList = new ArrayList<>();
 
         for (WebElement element : results) {

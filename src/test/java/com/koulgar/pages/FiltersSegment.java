@@ -124,7 +124,7 @@ public class FiltersSegment {
         js = (JavascriptExecutor) driver;
 
         //Scroll page down
-        js.executeScript("window.scrollBy(0,150);");
+        js.executeScript("window.scrollBy(0,100);");
 
         //If price range box is not active click on it
         this.specifyPriceBox = helperMethods.driverWait(4, specifyPriceBox);
@@ -144,7 +144,7 @@ public class FiltersSegment {
         js = (JavascriptExecutor) driver;
 
         //Scroll page down
-        js.executeScript("window.scrollBy(0,150);");
+        js.executeScript("window.scrollBy(0,100);");
 
         //If size box is not active click on it
         this.selectApartmentSizeBox = helperMethods.driverWait(4, selectApartmentSizeBox);

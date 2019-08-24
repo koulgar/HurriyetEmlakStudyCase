@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -165,7 +164,8 @@
       <workItem from="1566577432042" duration="24375000" />
       <workItem from="1566636996699" duration="17097000" />
       <workItem from="1566656895243" duration="20000" />
-      <workItem from="1566657033610" duration="10676000" />
+      <workItem from="1566657033610" duration="12117000" />
+      <workItem from="1566677379741" duration="3080000" />
     </task>
     <servers />
   </component>
