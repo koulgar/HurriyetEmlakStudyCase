@@ -1,6 +1,7 @@
 package com.koulgar.pages;
 
 import com.koulgar.helperMethods.HelperMethods;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,40 +16,37 @@ public class FiltersSegment {
     private HelperMethods helperMethods;
     private JavascriptExecutor js;
 
-    @FindBy(xpath = "//*[@id=\"mCSB_1_container\"]/li[1]/a")
+    @FindBy(xpath = "//li//a[@title=\"Kiralık Daire\"]")
     private WebElement rentalType;
 
-    @FindBy(xpath = "//*[@id=\"facet-container\"]/div[2]/div[2]")
+    @FindBy(xpath = "//div//a[@title=\"Konum\"]")
     private WebElement selectLocationBox;
 
-    @FindBy(xpath = "//*[@id=\"facet-container\"]/div[2]/div[2]/div/div/div[1]/button")
+    @FindBy(xpath = "//button/span[contains(text(),\"İl Seçiniz\")]")
     private WebElement selectCountyBox;
 
-    @FindBy(xpath = "//*[@id=\"facet-container\"]/div[2]/div[2]/div/div/div[1]/div/div/input")
-    private WebElement selectCountyBoxText;
-
-    @FindBy(xpath = "//*[@id=\"facet-container\"]/div[2]/div[2]/div/div/div[1]/div/ul/li[2]/label")
+    @FindBy(xpath = "//input[@value=\"34\"]/parent::label")
     private WebElement selectCounty;
 
-    @FindBy(xpath = "//*[@id=\"realty-facet\"]/div[1]")
+    @FindBy(xpath = "//a[contains(text(),\"Brüt Metrekare\")]")
     private WebElement specifyAreaBox;
 
     @FindBy(xpath = "//*[@id=\"numSqmGapEnd\"]")
     private WebElement specifyMaxArea;
 
-    @FindBy(xpath = "//*[@id=\"realty-facet\"]/div[2]")
+    @FindBy(xpath = "//a[contains(text(),\"Fiyat Aralığı\")]")
     private WebElement specifyPriceBox;
 
     @FindBy(xpath = "//*[@id=\"numPriceGapEnd\"]")
     private WebElement specifyMaxPrice;
 
-    @FindBy(xpath = "//*[@id=\"realty-facet\"]/div[3]")
+    @FindBy(xpath = "//a[@title=\"Oda + Salon\"]")
     private WebElement selectApartmentSizeBox;
 
-    @FindBy(xpath = "//*[@id=\"mCSB_2_container\"]/li[4]/label")
+    @FindBy(xpath = "//input[following-sibling::text()[contains(.,\"2+1\")]]")
     private WebElement specifyApartmentSize;
 
-    @FindBy(xpath = "//*[@id=\"facet-container\"]/div[2]/div[5]/div/button")
+    @FindBy(xpath = "//button[text()=\"Ara\" and @class=\"btn btn-lg btn-green mobile-search-button w100p\"]")
     private WebElement filteredSearchSubmitButton;
 
     public FiltersSegment(WebDriver driver) {
@@ -81,21 +79,20 @@ public class FiltersSegment {
         js.executeScript("window.scrollBy(0,300);");
 
         //If location box is not active click on it
-        this.selectLocationBox = helperMethods.driverWait(10, selectLocationBox);
+        this.selectLocationBox = helperMethods.driverWait(4, selectLocationBox);
         if (selectLocationBox.getAttribute("class").equals("facet-box")) {
             actions.moveToElement(selectLocationBox).click().perform();
         }
 
         //Click on select province box
-        this.selectCountyBox = helperMethods.driverWait(10, selectCountyBox);
+        this.selectCountyBox = helperMethods.driverWait(4, selectCountyBox);
         actions.moveToElement(selectCountyBox).click().perform();
 
         //Search county
-        this.selectCountyBoxText = helperMethods.driverWait(10, selectCountyBoxText);
-        actions.moveToElement(selectCountyBoxText).click().sendKeys(location).perform();
+        actions.sendKeys(location).perform();
 
         //Click to selected county
-        this.selectCounty = helperMethods.driverWait(10, selectCounty);
+        this.selectCounty = helperMethods.driverWait(4, selectCounty);
         actions.moveToElement(selectCounty).click().perform();
     }
 
@@ -151,7 +148,8 @@ public class FiltersSegment {
 
         //If size box is not active click on it
         this.selectApartmentSizeBox = helperMethods.driverWait(4, selectApartmentSizeBox);
-        if (selectApartmentSizeBox.getAttribute("class").equals("facet-box")) {
+        WebElement selectApartmentSizeBoxParent = selectApartmentSizeBox.findElement(By.xpath("./parent::div"));
+        if (selectApartmentSizeBoxParent.getAttribute("class").equals("facet-box")) {
             actions.moveToElement(selectApartmentSizeBox).click().perform();
         }
 

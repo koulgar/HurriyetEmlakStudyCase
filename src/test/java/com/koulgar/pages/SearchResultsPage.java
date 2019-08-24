@@ -49,6 +49,9 @@ public class SearchResultsPage {
         actions = new Actions(driver);
         js = (JavascriptExecutor) driver;
 
+        //Scroll page down
+        js.executeScript("window.scrollBy(0,300);");
+
         //Selecting filtered advert result
         this.filteredSearchAdvertLink = helperMethods.driverWait(10, filteredSearchAdvertLink);
         actions.moveToElement(filteredSearchAdvertLink).perform();
