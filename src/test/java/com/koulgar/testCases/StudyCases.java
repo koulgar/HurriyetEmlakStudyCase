@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Array;
@@ -33,13 +34,18 @@ public class StudyCases {
     AdvertizementPage advertizementPage;
     FiltersSegment filtersSegment;
 
+    @Parameters({"resolution"})
     @BeforeTest
-    public void setup() throws MalformedURLException {
+    public void setup(String resolution) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setBrowserName("chrome");
         capabilities.setPlatform(Platform.LINUX);
-        capabilities.setCapability("screenResolution", "1366x768");
+        if (resolution.equals("1920x1080")) {
+            capabilities.setCapability("screenResolution", "1920x1080");
+        } else if (resolution.equals("1366x768")) {
+            capabilities.setCapability("screenResolution", "1366x768");
+        }
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.hurriyetemlak.com/");
