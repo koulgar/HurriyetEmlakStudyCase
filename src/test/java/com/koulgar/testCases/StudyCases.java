@@ -15,8 +15,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Array;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
@@ -43,40 +45,40 @@ public class StudyCases {
         driver.get("https://www.hurriyetemlak.com/");
         driver.manage().window().maximize();
     }
-//
-//    @Test(priority = 1)
-//    public void testCase1() throws InterruptedException {
-//
-//        //Create "HomePage" Objects
-//        homePage = new HomePage(driver);
-//
-//        //Make a search on home page
-//        homePage.searchForAdvertizement("NG Residence");
-//
-//        //Create "SearchResultsPage" Objects
-//        searchResultsPage = new SearchResultsPage(driver);
-//
-//        //Select an advertizement that contains "NG"
-//        searchResultsPage.selectAdvertizement();
-//
-//        //Create "AdvertizementPage" Objects
-//        advertizementPage = new AdvertizementPage(driver);
-//
-//        //Reveal and get Phone Number
-//        String phoneNumber = advertizementPage.getPhoneNumber();
-//        Pattern pattern = Pattern.compile("(([\\+]90?)|([0]?))([ ]?)((\\([0-9]{3}\\))|([0-9]{3}))([ ]?)([0-9]{3})(\\s*[\\-]?)([0-9]{2})(\\s*[\\-]?)([0-9]{2})");
-//
-//        //Check if phoneNumber variable has an actual phone number
-//        Assert.assertTrue(pattern.matcher(phoneNumber).matches());
-//
-//        //Print found phone number
-//        System.out.println("Phone number of advert : " + phoneNumber);
-//    }
+
+    @Test(priority = 1)
+    public void testCase1() throws InterruptedException {
+
+        //Create "HomePage" Objects
+        homePage = new HomePage(driver);
+
+        //Make a search on home page
+        homePage.searchForAdvertizement("NG Residence");
+
+        //Create "SearchResultsPage" Objects
+        searchResultsPage = new SearchResultsPage(driver);
+
+        //Select an advertizement that contains "NG"
+        searchResultsPage.selectAdvertizement();
+
+        //Create "AdvertizementPage" Objects
+        advertizementPage = new AdvertizementPage(driver);
+
+        //Reveal and get Phone Number
+        String phoneNumber = advertizementPage.getPhoneNumber();
+        Pattern pattern = Pattern.compile("(([\\+]90?)|([0]?))([ ]?)((\\([0-9]{3}\\))|([0-9]{3}))([ ]?)([0-9]{3})(\\s*[\\-]?)([0-9]{2})(\\s*[\\-]?)([0-9]{2})");
+
+        //Check if phoneNumber variable has an actual phone number
+        Assert.assertTrue(pattern.matcher(phoneNumber).matches());
+
+        //Print found phone number
+        System.out.println("Phone number of advert : " + phoneNumber);
+    }
 
     @Test(priority = 2)
-    public void testCase11() {
-//        //Navigate to main page
-//        driver.navigate().to("https://www.hurriyetemlak.com/");
+    public void testCase11() throws InterruptedException {
+        //Navigate to main page
+        driver.navigate().to("https://www.hurriyetemlak.com/");
 
         //Create "HomePage" Objects
         homePage = new HomePage(driver);
@@ -88,13 +90,19 @@ public class StudyCases {
         filtersSegment = new FiltersSegment(driver);
 
         //Apply filters
-        filtersSegment.applyFilters();
+        filtersSegment.applyFilters("İstanbul","150","4000");
 
-        /*
-        TODO    -
-                - add more filters to apply
-                - add Assert conditions
-         */
+        //Create "SearchResultsPage" Objects
+        searchResultsPage = new SearchResultsPage(driver);
+
+        //Check results if suitable with filters
+        List<String> resultList = searchResultsPage.getAdvertInfo();
+
+        Assert.assertTrue(resultList.get(0).contains("İstanbul"));
+        Assert.assertEquals(resultList.get(2),"2+1");
+        Assert.assertTrue(Integer.parseInt(resultList.get(3).split(" ")[0])<=150);
+        Assert.assertTrue(Integer.parseInt(resultList.get(4).split(" ")[0].replace(".", "")) <= 4000);
+
     }
 
     @AfterTest

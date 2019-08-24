@@ -26,16 +26,16 @@ public class AdvertizementPage {
     }
 
     public String getPhoneNumber() {
+        System.out.println("Getting phone number");
         actions = new Actions(driver);
 
         //Moving to element that reveals phone number
-        actions.moveToElement(revealPhoneNumberButton);
         this.revealPhoneNumberButton = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(revealPhoneNumberButton));
-        actions.click(revealPhoneNumberButton).perform();
+        actions.moveToElement(revealPhoneNumberButton).click().perform();
 
         //Get phone number and print it
-        actions.moveToElement(phoneNumberElement);
         this.phoneNumberElement = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(phoneNumberElement));
+        actions.moveToElement(phoneNumberElement);
         return phoneNumberElement.getText();
 
     }
