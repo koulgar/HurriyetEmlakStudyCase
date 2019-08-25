@@ -26,6 +26,7 @@ public class HomePage {
     }
 
     public void searchForAdvertizement(String searchWord) {
+        System.out.println("Searching for adverts");
         actions = new Actions(driver);
 
         //Writing word to be searched to search bar and submitting

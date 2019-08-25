@@ -25,21 +25,26 @@ public class StudyCases {
 
     private WebDriver driver;
     private String nodeUrl;
-    private Actions actions;
+    private String browserName;
 
     HomePage homePage;
     SearchResultsPage searchResultsPage;
     AdvertizementPage advertizementPage;
     FiltersSegment filtersSegment;
 
-    @Parameters({"resolution"})
+    @Parameters({"testName", "browserName", "platform", "resolution","version"})
     @BeforeTest
-    public void setup(String resolution) throws MalformedURLException {
+    public void setup(String testName, String browserName, String platform, String resolution, String version) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
+        this.browserName = browserName;
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName","chrome");
-        capabilities.setCapability("platform",Platform.LINUX);
+        capabilities.setCapability("browserName", browserName);
+        capabilities.setCapability("platform", platform);
         capabilities.setCapability("screenResolution", resolution);
+        capabilities.setCapability("name", testName);
+        if (browserName.equals("safari")) {
+            capabilities.setCapability("version",version);
+        }
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.hurriyetemlak.com/");
@@ -48,7 +53,9 @@ public class StudyCases {
 
     @Test(priority = 1)
     public void testCase1() throws InterruptedException {
-
+        if (browserName.equals("safari")) {
+            Thread.sleep(8000);
+        }
         //Create "HomePage" Objects
         homePage = new HomePage(driver);
 
@@ -90,7 +97,7 @@ public class StudyCases {
         filtersSegment = new FiltersSegment(driver);
 
         //Apply filters
-        filtersSegment.applyFilters("İstanbul","150","4000");
+        filtersSegment.applyFilters("İstanbul", "150", "4000");
 
         //Create "SearchResultsPage" Objects
         searchResultsPage = new SearchResultsPage(driver);
@@ -99,8 +106,8 @@ public class StudyCases {
         List<String> resultList = searchResultsPage.getAdvertInfo();
 
         Assert.assertTrue(resultList.get(0).contains("İstanbul"));
-        Assert.assertEquals(resultList.get(2),"2+1");
-        Assert.assertTrue(Integer.parseInt(resultList.get(3).split(" ")[0])<=150);
+        Assert.assertEquals(resultList.get(2), "2+1");
+        Assert.assertTrue(Integer.parseInt(resultList.get(3).split(" ")[0]) <= 150);
         Assert.assertTrue(Integer.parseInt(resultList.get(4).split(" ")[0].replace(".", "")) <= 4000);
 
     }
