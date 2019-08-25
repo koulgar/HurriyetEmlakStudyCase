@@ -36,9 +36,9 @@ public class StudyCases {
     @BeforeTest
     public void setup(String resolution) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setBrowserName("chrome");
-        capabilities.setPlatform(Platform.LINUX);
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName",   "chrome");
+        capabilities.setCapability("platform","linux");
         if (resolution.equals("1920x1080")) {
             capabilities.setCapability("screenResolution", "1920x1080");
         } else if (resolution.equals("1366x768")) {
