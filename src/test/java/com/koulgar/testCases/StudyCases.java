@@ -37,13 +37,9 @@ public class StudyCases {
     public void setup(String resolution) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName",   "chrome");
-        capabilities.setCapability("platform","linux");
-        if (resolution.equals("1920x1080")) {
-            capabilities.setCapability("screenResolution", "1920x1080");
-        } else if (resolution.equals("1366x768")) {
-            capabilities.setCapability("screenResolution", "1366x768");
-        }
+        capabilities.setCapability("browserName","chrome");
+        capabilities.setCapability("platform",Platform.LINUX);
+        capabilities.setCapability("screenResolution", resolution);
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.hurriyetemlak.com/");
