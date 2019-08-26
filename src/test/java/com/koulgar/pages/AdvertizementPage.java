@@ -34,7 +34,7 @@ public class AdvertizementPage {
 
         //Moving to element that reveals phone number
         this.revealPhoneNumberButton = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(revealPhoneNumberButton));
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -arguments[1].offsetHeight);", revealPhoneNumberButton, header);
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -arguments[1].offsetHeight);", revealPhoneNumberButton);
         actions.click(revealPhoneNumberButton).perform();
 
         //Get phone number and print it
