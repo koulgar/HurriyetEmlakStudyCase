@@ -61,12 +61,10 @@ public class FiltersSegment {
         helperMethods = new HelperMethods(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,100)");
-
         //Select rental Type
         this.rentalType = helperMethods.driverWait(10, rentalType);
-        actions.moveToElement(rentalType).click().perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3);", rentalType);
+        actions.click(rentalType).perform();
     }
 
     private void selectLocation(String location) {
@@ -75,25 +73,27 @@ public class FiltersSegment {
         helperMethods = new HelperMethods(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,300);");
+        //Scroll down to element
+        this.selectLocationBox = helperMethods.driverWait(4, selectLocationBox);
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectLocationBox);
 
         //If location box is not active click on it
-        this.selectLocationBox = helperMethods.driverWait(4, selectLocationBox);
         if (selectLocationBox.getAttribute("class").equals("facet-box")) {
-            actions.moveToElement(selectLocationBox).click().perform();
+            actions.click(selectLocationBox).perform();
         }
 
         //Click on select province box
         this.selectCountyBox = helperMethods.driverWait(4, selectCountyBox);
-        actions.moveToElement(selectCountyBox).click().perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectCountyBox);
+        actions.click(selectCountyBox).perform();
 
         //Search county
         actions.sendKeys(location).perform();
 
         //Click to selected county
         this.selectCounty = helperMethods.driverWait(4, selectCounty);
-        actions.moveToElement(selectCounty).click().perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectCounty);
+        actions.click(selectCounty).perform();
     }
 
     private void selectArea(String area) {
@@ -102,18 +102,17 @@ public class FiltersSegment {
         helperMethods = new HelperMethods(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,150);");
-
         //If area box is not active click on it
         this.specifyAreaBox = helperMethods.driverWait(4, specifyAreaBox);
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyAreaBox);
         if (specifyAreaBox.getAttribute("class").equals("facet-box")) {
-            actions.moveToElement(specifyAreaBox).click().perform();
+            actions.click(specifyAreaBox).perform();
         }
 
         //Specify max area
         this.specifyMaxArea = helperMethods.driverWait(4, specifyMaxArea);
-        actions.moveToElement(specifyMaxArea).click().sendKeys(area).perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyMaxArea);
+        actions.click(specifyMaxArea).sendKeys(area).perform();
 
     }
 
@@ -123,18 +122,17 @@ public class FiltersSegment {
         helperMethods = new HelperMethods(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,100);");
-
         //If price range box is not active click on it
         this.specifyPriceBox = helperMethods.driverWait(4, specifyPriceBox);
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyPriceBox);
         if (specifyPriceBox.getAttribute("class").equals("facet-box")) {
-            actions.moveToElement(specifyPriceBox).click().perform();
+            actions.click(specifyPriceBox).perform();
         }
 
         //Specify max price
         this.specifyMaxPrice = helperMethods.driverWait(4, specifyMaxPrice);
-        actions.moveToElement(specifyMaxPrice).click().sendKeys(price).perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyMaxPrice);
+        actions.click(specifyMaxPrice).sendKeys(price).perform();
     }
 
     private void selectApartmentSize() {
@@ -143,19 +141,18 @@ public class FiltersSegment {
         helperMethods = new HelperMethods(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,100);");
-
         //If size box is not active click on it
         this.selectApartmentSizeBox = helperMethods.driverWait(4, selectApartmentSizeBox);
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectApartmentSizeBox);
         WebElement selectApartmentSizeBoxParent = selectApartmentSizeBox.findElement(By.xpath("./parent::div"));
         if (selectApartmentSizeBoxParent.getAttribute("class").equals("facet-box")) {
-            actions.moveToElement(selectApartmentSizeBox).click().perform();
+            actions.click(selectApartmentSizeBox).perform();
         }
 
         //Specify apartment size
         this.specifyApartmentSize = helperMethods.driverWait(4, specifyApartmentSize);
-        actions.moveToElement(specifyApartmentSize).click().perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyApartmentSize);
+        actions.click(specifyApartmentSize).perform();
     }
 
     private void submitFilters() {
@@ -168,7 +165,7 @@ public class FiltersSegment {
         actions.moveToElement(filteredSearchSubmitButton).click().perform();
     }
 
-    public void applyFilters(String locationCounty,String maxArea, String maxPrice) throws InterruptedException {
+    public void applyFilters(String locationCounty, String maxArea, String maxPrice) throws InterruptedException {
         System.out.println("Looking for filters to apply..");
         selectRentalType();
         Thread.sleep(500);

@@ -1,5 +1,6 @@
 package com.koulgar.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,6 +13,7 @@ public class AdvertizementPage {
 
     private WebDriver driver;
     private Actions actions;
+    private JavascriptExecutor js;
 
     @FindBy(xpath = "//a[contains(@title,'Telefonu Göster')]")
     private WebElement revealPhoneNumberButton;
@@ -28,10 +30,12 @@ public class AdvertizementPage {
     public String getPhoneNumber() {
         System.out.println("Getting phone number");
         actions = new Actions(driver);
+        js = (JavascriptExecutor) driver;
 
         //Moving to element that reveals phone number
         this.revealPhoneNumberButton = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(revealPhoneNumberButton));
-        actions.moveToElement(revealPhoneNumberButton).click().perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -arguments[1].offsetHeight);", revealPhoneNumberButton, header);
+        actions.click(revealPhoneNumberButton).perform();
 
         //Get phone number and print it
         this.phoneNumberElement = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(phoneNumberElement));

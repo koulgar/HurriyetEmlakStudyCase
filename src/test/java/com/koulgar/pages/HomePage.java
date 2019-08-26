@@ -1,5 +1,6 @@
 package com.koulgar.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,6 +13,7 @@ public class HomePage {
 
     private WebDriver driver;
     private Actions actions;
+    private JavascriptExecutor js;
 
     @FindBy(xpath = "//*[@id=\"txtSearch\"]")
     private WebElement searchBar;

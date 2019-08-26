@@ -7,7 +7,6 @@
         <parameter name="browserName" value="chrome"/>
         <parameter name="platform" value="LINUX"/>
         <parameter name="resolution" value="1920x1080"/>
-        <parameter name="version" value="76"/>
         <classes>
             <class name="com.koulgar.testCases.StudyCases"/>
         </classes>
@@ -18,18 +17,6 @@
         <parameter name="browserName" value="chrome"/>
         <parameter name="platform" value="LINUX"/>
         <parameter name="resolution" value="1366x768"/>
-        <parameter name="version" value="12"/>
-        <classes>
-            <class name="com.koulgar.testCases.StudyCases"/>
-        </classes>
-    </test>
-
-    <test name="Safari - 1920x1080">
-        <parameter name="testName" value="Safari - 1920x1080"/>
-        <parameter name="browserName" value="safari"/>
-        <parameter name="platform" value="MAC"/>
-        <parameter name="resolution" value="1920x1080"/>
-        <parameter name="version" value="12"/>
         <classes>
             <class name="com.koulgar.testCases.StudyCases"/>
         </classes>

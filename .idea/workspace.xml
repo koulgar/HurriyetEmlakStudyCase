@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/AdvertizementPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/AdvertizementPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testng.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,6 +62,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -177,7 +187,8 @@
       <workItem from="1566750759507" duration="685000" />
       <workItem from="1566754305339" duration="9252000" />
       <workItem from="1566765965336" duration="54000" />
-      <workItem from="1566767441140" duration="6937000" />
+      <workItem from="1566767441140" duration="7154000" />
+      <workItem from="1566810894118" duration="4218000" />
     </task>
     <servers />
   </component>

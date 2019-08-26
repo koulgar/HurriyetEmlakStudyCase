@@ -35,12 +35,9 @@ public class SearchResultsPage {
         actions = new Actions(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,300);");
-
         //Selecting proper advert
         this.firstAdvertOnList = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(firstAdvertOnList));
-        actions.moveToElement(firstAdvertOnList).perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", firstAdvertOnList);
         actions.click(firstAdvertOnList).perform();
     }
 
@@ -50,12 +47,9 @@ public class SearchResultsPage {
         actions = new Actions(driver);
         js = (JavascriptExecutor) driver;
 
-        //Scroll page down
-        js.executeScript("window.scrollBy(0,300);");
-
         //Selecting filtered advert result
         this.firstAdvertOnList = helperMethods.driverWait(10, firstAdvertOnList);
-        actions.moveToElement(firstAdvertOnList).perform();
+        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", firstAdvertOnList);
 
         //Getting texts from web elements of advert
         List<WebElement> results = firstAdvertOnList.findElements(By.xpath("./div/div/ul//li"));

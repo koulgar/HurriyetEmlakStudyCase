@@ -4,9 +4,7 @@ import com.koulgar.pages.AdvertizementPage;
 import com.koulgar.pages.FiltersSegment;
 import com.koulgar.pages.HomePage;
 import com.koulgar.pages.SearchResultsPage;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -32,9 +30,9 @@ public class StudyCases {
     AdvertizementPage advertizementPage;
     FiltersSegment filtersSegment;
 
-    @Parameters({"testName", "browserName", "platform", "resolution","version"})
+    @Parameters({"testName", "browserName", "platform", "resolution"})
     @BeforeTest
-    public void setup(String testName, String browserName, String platform, String resolution, String version) throws MalformedURLException {
+    public void setup(String testName, String browserName, String platform, String resolution) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
         this.browserName = browserName;
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -42,9 +40,6 @@ public class StudyCases {
         capabilities.setCapability("platform", platform);
         capabilities.setCapability("screenResolution", resolution);
         capabilities.setCapability("name", testName);
-        if (browserName.equals("safari")) {
-            capabilities.setCapability("version",version);
-        }
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.hurriyetemlak.com/");
@@ -52,10 +47,8 @@ public class StudyCases {
     }
 
     @Test(priority = 1)
-    public void testCase1() throws InterruptedException {
-        if (browserName.equals("safari")) {
-            Thread.sleep(8000);
-        }
+    public void testCase1() {
+
         //Create "HomePage" Objects
         homePage = new HomePage(driver);
 
