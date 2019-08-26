@@ -1,4 +1,4 @@
-package com.koulgar.pages;
+package com.koulgar.desktopPages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.koulgar.pages;
+package com.koulgar.desktopPages;
 
 import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.By;

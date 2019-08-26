@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/MobileStudyCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/AdvertizementPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/FiltersSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/SearchResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/DesktopStudyCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/AdvertizementPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/AdvertizementPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/HomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/AdvertizementPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/HomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testng.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,7 +80,7 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG./home/dogu/IdeaProjects/HurriyetEmlakStudyCases/src/test/resources/testng.xml">
-    <configuration name="StudyCases (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DesktopStudyCases" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
         <pattern>
@@ -87,7 +89,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
-      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.DesktopStudyCases" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -95,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudyCases" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DesktopStudyCases" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
         <pattern>
@@ -104,7 +106,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
-      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.DesktopStudyCases" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -112,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudyCases.testCase1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DesktopStudyCases.testCase1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
         <pattern>
@@ -121,7 +123,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
-      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.DesktopStudyCases" />
       <option name="METHOD_NAME" value="testCase1" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -130,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudyCases.testCase11" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DesktopStudyCases.testCase11" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="HurriyetEmlakStudyCases" />
       <extension name="coverage">
         <pattern>
@@ -139,7 +141,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.koulgar.testCases" />
-      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.StudyCases" />
+      <option name="MAIN_CLASS_NAME" value="com.koulgar.testCases.DesktopStudyCases" />
       <option name="METHOD_NAME" value="testCase11" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -161,10 +163,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG./home/dogu/IdeaProjects/HurriyetEmlakStudyCases/src/test/resources/testng.xml" />
-        <item itemvalue="TestNG.StudyCases" />
-        <item itemvalue="TestNG.StudyCases (1)" />
-        <item itemvalue="TestNG.StudyCases.testCase11" />
-        <item itemvalue="TestNG.StudyCases.testCase1" />
+        <item itemvalue="TestNG.DesktopStudyCases" />
+        <item itemvalue="TestNG.DesktopStudyCases" />
+        <item itemvalue="TestNG.DesktopStudyCases.testCase11" />
+        <item itemvalue="TestNG.DesktopStudyCases.testCase1" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +190,7 @@
       <workItem from="1566754305339" duration="9252000" />
       <workItem from="1566765965336" duration="54000" />
       <workItem from="1566767441140" duration="7154000" />
-      <workItem from="1566810894118" duration="4218000" />
+      <workItem from="1566810894118" duration="12161000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,11 @@
 package com.koulgar.testCases;
 
-import com.koulgar.pages.AdvertizementPage;
-import com.koulgar.pages.FiltersSegment;
-import com.koulgar.pages.HomePage;
-import com.koulgar.pages.SearchResultsPage;
+import com.koulgar.desktopPages.AdvertizementPage;
+import com.koulgar.desktopPages.FiltersSegment;
+import com.koulgar.desktopPages.HomePage;
+import com.koulgar.desktopPages.SearchResultsPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -19,27 +20,28 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-public class StudyCases {
+public class DesktopStudyCases {
 
     private WebDriver driver;
     private String nodeUrl;
-    private String browserName;
 
-    HomePage homePage;
-    SearchResultsPage searchResultsPage;
-    AdvertizementPage advertizementPage;
-    FiltersSegment filtersSegment;
+    private HomePage homePage;
+    private SearchResultsPage searchResultsPage;
+    private AdvertizementPage advertizementPage;
+    private FiltersSegment filtersSegment;
 
-    @Parameters({"testName", "browserName", "platform", "resolution"})
+    @Parameters({"testName", "browserName", "platform", "resolution","options"})
     @BeforeTest
-    public void setup(String testName, String browserName, String platform, String resolution) throws MalformedURLException {
+    public void setup(String testName, String browserName, String platform, String resolution, String options) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
-        this.browserName = browserName;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("platform", platform);
         capabilities.setCapability("screenResolution", resolution);
         capabilities.setCapability("name", testName);
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments(options);
+        capabilities.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://www.hurriyetemlak.com/");
