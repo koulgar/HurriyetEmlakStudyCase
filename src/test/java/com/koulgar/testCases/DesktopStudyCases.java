@@ -60,7 +60,7 @@ public class DesktopStudyCases {
         //Create "SearchResultsPage" Objects
         searchResultsPage = new SearchResultsPage(driver);
 
-        //Select an advertizement that contains "NG"
+        //Select an advertizement
         searchResultsPage.selectAdvert();
 
         //Create "AdvertizementPage" Objects

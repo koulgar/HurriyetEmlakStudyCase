@@ -1,19 +1,18 @@
 package com.koulgar.desktopPages;
 
-import org.openqa.selenium.JavascriptExecutor;
+import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
     private WebDriver driver;
     private Actions actions;
-    private JavascriptExecutor js;
+
+    private HelperMethods helperMethods;
 
     @FindBy(xpath = "//*[@id=\"txtSearch\"]")
     private WebElement searchBar;
@@ -30,9 +29,10 @@ public class HomePage {
     public void searchForAdvertizement(String searchWord) {
         System.out.println("Searching for adverts");
         actions = new Actions(driver);
+        helperMethods = new HelperMethods(driver);
 
         //Writing word to be searched to search bar and submitting
-        this.searchBar = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(searchBar));
+        this.searchBar = helperMethods.driverWait(10, searchBar);
         actions.moveToElement(searchBar).click().sendKeys(searchWord).perform();
         actions.moveToElement(searchButton).click().perform();
     }

@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +31,11 @@ public class SearchResultsPage {
     public void selectAdvert() {
         System.out.println("Selecting proper advert");
         actions = new Actions(driver);
+        helperMethods = new HelperMethods(driver);
         js = (JavascriptExecutor) driver;
 
         //Selecting proper advert
-        this.firstAdvertOnList = new WebDriverWait(this.driver, 10).until(ExpectedConditions.visibilityOf(firstAdvertOnList));
+        this.firstAdvertOnList = helperMethods.driverWait(10, firstAdvertOnList);
         js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", firstAdvertOnList);
         actions.click(firstAdvertOnList).perform();
     }

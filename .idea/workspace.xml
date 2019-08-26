@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/MobileStudyCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/AdvertizementPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/SearchPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/SearchResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/AdvertizementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/AdvertizementPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/FiltersSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/FiltersSegment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/pages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/SearchResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/StudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/DesktopStudyCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/AdvertizementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/AdvertizementPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/desktopPages/SearchResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/helperMethods/HelperMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/helperMethods/HelperMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/mobilePages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/DesktopStudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/DesktopStudyCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/MobileStudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/MobileStudyCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/AdvertizementPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/FiltersSegment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/HomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/pages/SearchResultsPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/StudyCases.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/desktopPages/AdvertizementPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/desktopPages/AdvertizementPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/desktopPages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/desktopPages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/desktopPages/SearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/desktopPages/SearchResultsPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/helperMethods/HelperMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/helperMethods/HelperMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/DesktopStudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/DesktopStudyCases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/MobileStudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/MobileStudyCases.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testng.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,6 +27,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,7 +79,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -190,7 +208,8 @@
       <workItem from="1566754305339" duration="9252000" />
       <workItem from="1566765965336" duration="54000" />
       <workItem from="1566767441140" duration="7154000" />
-      <workItem from="1566810894118" duration="12161000" />
+      <workItem from="1566810894118" duration="32290000" />
+      <workItem from="1566854401912" duration="3366000" />
     </task>
     <servers />
   </component>

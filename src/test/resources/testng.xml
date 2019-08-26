@@ -47,10 +47,21 @@
 <!--    </test>-->
 
     <test name="IPhone 6 - 360x640">
-        <parameter name="testName" value="Mobile Safari - 360x640"/>
+        <parameter name="testName" value="IPhone 6 Safari - 360x640"/>
         <parameter name="browserName" value="chrome"/>
         <parameter name="platform" value="LINUX"/>
         <parameter name="resolution" value="360x640"/>
+        <parameter name="options" value="--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="com.koulgar.testCases.MobileStudyCases"/>
+        </classes>
+    </test>
+
+    <test name="IPhone 6 - 375x667">
+        <parameter name="testName" value="IPhone 6 Safari - 375x667"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="platform" value="LINUX"/>
+        <parameter name="resolution" value="375x667"/>
         <parameter name="options" value="--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
         <classes>
             <class name="com.koulgar.testCases.MobileStudyCases"/>

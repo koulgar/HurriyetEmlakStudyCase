@@ -1,4 +1,4 @@
-package com.koulgar.desktopPages;
+package com.koulgar.mobilePages;
 
 import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,10 +16,10 @@ public class AdvertizementPage {
 
     private HelperMethods helperMethods;
 
-    @FindBy(xpath = "//a[contains(@title,'Telefonu Göster')]")
+    @FindBy(xpath = "//*[@id=\"ownerPhoneNumbersTitle\"]")
     private WebElement revealPhoneNumberButton;
 
-    @FindBy(xpath = "//ul[@class='phone-numbers']")
+    @FindBy(xpath = "//*[@id=\"ownerPhoneNumbers\"]/ul/li/a")
     private WebElement phoneNumberElement;
 
     public AdvertizementPage(WebDriver driver) {
@@ -35,13 +35,12 @@ public class AdvertizementPage {
         js = (JavascriptExecutor) driver;
 
         //Moving to element that reveals phone number
-        this.revealPhoneNumberButton = helperMethods.driverWait(10,revealPhoneNumberButton);
+        this.revealPhoneNumberButton = helperMethods.driverWait(10, revealPhoneNumberButton);
         js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3);", revealPhoneNumberButton);
         actions.click(revealPhoneNumberButton).perform();
 
         //Get phone number and print it
         this.phoneNumberElement = helperMethods.driverWait(10, phoneNumberElement);
         return phoneNumberElement.getText();
-
     }
 }
