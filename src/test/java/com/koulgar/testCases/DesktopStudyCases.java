@@ -4,6 +4,7 @@ import com.koulgar.desktopPages.AdvertizementPage;
 import com.koulgar.desktopPages.FiltersSegment;
 import com.koulgar.desktopPages.HomePage;
 import com.koulgar.desktopPages.SearchResultsPage;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -34,17 +35,28 @@ public class DesktopStudyCases {
     @BeforeTest
     public void setup(String testName, String browserName, String platform, String resolution, String options) throws MalformedURLException {
         nodeUrl = "http://localhost:4444//wd/hub";
+
+        //Zalenium settings
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", browserName);
         capabilities.setCapability("platform", platform);
         capabilities.setCapability("screenResolution", resolution);
         capabilities.setCapability("name", testName);
+
+        //User-agent settings
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments(options);
         capabilities.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
+
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://www.hurriyetemlak.com/");
+
+        //Manage cookies to get consistent pages
+        driver.get("http://www.hurriyetemlak.com");
+        driver.manage().deleteCookieNamed("desktop2019");
+        Cookie cookie = new Cookie("desktop2019", "0");
+        driver.manage().addCookie(cookie);
+        driver.navigate().refresh();
         driver.manage().window().maximize();
     }
 
