@@ -84,8 +84,7 @@
         <parameter name="browserName" value="chrome"/>
         <parameter name="platform" value="LINUX"/>
         <parameter name="resolution" value="375x666"/>
-        <parameter name="options" value="--user-agent=    Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36
-"/>
+        <parameter name="options" value="--user-agent=    Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"/>
         <classes>
             <class name="com.koulgar.testCases.MobileStudyCases"/>
         </classes>
