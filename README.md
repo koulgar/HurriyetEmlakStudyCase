@@ -83,7 +83,12 @@ If everything is fine you should see something like this in your terminal.(with 
 ```
 
 ### Running Test Cases
-* Run "testng.xml" file inside your IDE to run all test cases. 
+* Run "testng.xml" file inside your IDE to run all test cases.
+or
+* Use terminal with following command,
+```
+  $ mvn clean test -Dsurefire.suiteXmlFiles=<Full path to your testng.xml file>
+```
 
 ## Docker Run Parameters
 * **--rm** - remove container automatically after it exits
