@@ -53,10 +53,12 @@ public class MobileStudyCases {
 
         //Manage cookies to get consistent pages
         driver.get("http://www.hurriyetemlak.com");
-        driver.manage().deleteCookieNamed("desktop2019");
-        Cookie cookie = new Cookie("desktop2019", "0");
-        driver.manage().addCookie(cookie);
-        driver.navigate().refresh();
+        if (driver.manage().getCookieNamed("desktop2019") != null) {
+            driver.manage().deleteCookieNamed("desktop2019");
+            Cookie cookie = new Cookie("desktop2019", "0");
+            driver.manage().addCookie(cookie);
+            driver.navigate().refresh();
+        }
         driver.manage().window().maximize();
     }
 
@@ -117,7 +119,7 @@ public class MobileStudyCases {
         searchResultsPage = new SearchResultsPage(driver);
 
         //Apply filters
-        searchResultsPage.applyFilters("İstanbul","4000","150");
+        searchResultsPage.applyFilters("İstanbul", "4000", "150");
 
         //Check results is suitable with filters
         List<String> resultList = searchResultsPage.getAdvertInfo();
@@ -125,7 +127,7 @@ public class MobileStudyCases {
         Assert.assertTrue(resultList.get(0).contains("İstanbul"));
         Assert.assertEquals(resultList.get(1), "2+1");
         Assert.assertTrue(Integer.parseInt(resultList.get(2)) <= 150);
-        Assert.assertTrue(Integer.parseInt(resultList.get(3).replace(".","")) <= 4000);
+        Assert.assertTrue(Integer.parseInt(resultList.get(3).replace(".", "")) <= 4000);
     }
 
     @AfterTest

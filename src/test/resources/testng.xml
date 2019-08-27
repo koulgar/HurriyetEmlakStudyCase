@@ -90,4 +90,5 @@
             <class name="com.koulgar.testCases.MobileStudyCases"/>
         </classes>
     </test>
+
 </suite>
