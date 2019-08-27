@@ -1,6 +1,6 @@
 package com.koulgar.testCases;
 
-import com.koulgar.mobilePages.AdvertizementPage;
+import com.koulgar.mobilePages.AdvertPage;
 import com.koulgar.mobilePages.HomePage;
 import com.koulgar.mobilePages.SearchPage;
 import com.koulgar.mobilePages.SearchResultsPage;
@@ -29,7 +29,7 @@ public class MobileStudyCases {
     private HomePage homePage;
     private SearchPage searchPage;
     private SearchResultsPage searchResultsPage;
-    private AdvertizementPage advertizementPage;
+    private AdvertPage advertPage;
 
     @Parameters({"testName", "browserName", "platform", "resolution", "options"})
     @BeforeTest
@@ -64,6 +64,9 @@ public class MobileStudyCases {
 
     @Test(priority = 1)
     public void testCase1() {
+        String rentalType = "Satılık"; //Supposed to be "Kiralık" or anything
+        String searchWord = "NG Residence";
+        Integer advertOnRow = 1;
 
         //Create "HomePage" Objects
         homePage = new HomePage(driver);
@@ -75,31 +78,41 @@ public class MobileStudyCases {
         searchPage = new SearchPage(driver);
 
         //Click search bar and search for advert
-        searchPage.searchForAdvert("NG Residence");
+        searchPage.searchForAdvert(rentalType,searchWord);
 
         //Create "searchResultsPage" Objects
         searchResultsPage = new SearchResultsPage(driver);
 
         //Select an advertizement
-        searchResultsPage.selectAdvert();
+        searchResultsPage.selectAdvert(advertOnRow);
 
         //Create "AdvertizementPage" Objects
-        advertizementPage = new AdvertizementPage(driver);
+        advertPage = new AdvertPage(driver);
 
         //Reveal and get Phone Number
-        String phoneNumber = advertizementPage.getPhoneNumber();
+        List<String> phoneNumbers = advertPage.getPhoneNumber();
         Pattern pattern = Pattern.compile("(([\\+]90?)|([0]?))([ ]?)((\\([0-9]{3}\\))|([0-9]{3}))([ ]?)([0-9]{3})(\\s*[\\-]?)([0-9]{2})(\\s*[\\-]?)([0-9]{2})");
 
         //Check if phoneNumber variable has an actual phone number
-        Assert.assertTrue(pattern.matcher(phoneNumber).matches());
+        for (String phoneNumber : phoneNumbers) {
+            Assert.assertTrue(pattern.matcher(phoneNumber).matches());
 
-        //Print found phone number
-        System.out.println("Phone number of advert : " + phoneNumber);
-
+            //Print found phone number
+            System.out.println("Phone number of advert : " + phoneNumber);
+        }
     }
 
     @Test(priority = 2)
     public void testCase11() throws InterruptedException {
+
+        String rentalType = "Kiralık";
+        String searchWord = "Kiralık Konut";
+        String locationCounty = "İstanbul";
+        String maxPrice = "4000";
+        String maxArea = "150";
+        String apartmentSize = "2+1";
+        Integer advertOnRow = 1;
+
         //Navigate to main page
         driver.navigate().to("https://www.hurriyetemlak.com/");
 
@@ -113,21 +126,21 @@ public class MobileStudyCases {
         searchPage = new SearchPage(driver);
 
         //Search for any word
-        searchPage.searchForAdvert("Kiralık Konut");
+        searchPage.searchForAdvert(rentalType, searchWord);
 
         //Create "searchResultsPage" Objects
         searchResultsPage = new SearchResultsPage(driver);
 
         //Apply filters
-        searchResultsPage.applyFilters("İstanbul", "4000", "150");
+        searchResultsPage.applyFilters(locationCounty, maxPrice, maxArea,apartmentSize);
 
         //Check results is suitable with filters
-        List<String> resultList = searchResultsPage.getAdvertInfo();
+        List<String> resultList = searchResultsPage.getAdvertInfo(advertOnRow);
 
-        Assert.assertTrue(resultList.get(0).contains("İstanbul"));
-        Assert.assertEquals(resultList.get(1), "2+1");
-        Assert.assertTrue(Integer.parseInt(resultList.get(2)) <= 150);
-        Assert.assertTrue(Integer.parseInt(resultList.get(3).replace(".", "")) <= 4000);
+        Assert.assertTrue(resultList.get(0).contains(locationCounty));
+        Assert.assertEquals(resultList.get(1), apartmentSize);
+        Assert.assertTrue(Integer.parseInt(resultList.get(2)) <= Integer.parseInt(maxArea));
+        Assert.assertTrue(Integer.parseInt(resultList.get(3).replace(".", "")) <= Integer.parseInt(maxPrice));
     }
 
     @AfterTest

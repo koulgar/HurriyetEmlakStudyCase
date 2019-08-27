@@ -46,49 +46,49 @@
         </classes>
     </test>
 
-<!--    <test name="IPhone 6 - 360x640">-->
-<!--        <parameter name="testName" value="IPhone 6 Safari - 360x640"/>-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <parameter name="platform" value="LINUX"/>-->
-<!--        <parameter name="resolution" value="360x640"/>-->
-<!--        <parameter name="options" value="&#45;&#45;user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>-->
-<!--        <classes>-->
-<!--            <class name="com.koulgar.testCases.MobileStudyCases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="IPhone 6 - 360x640">
+        <parameter name="testName" value="IPhone 6 Safari - 360x640"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="platform" value="LINUX"/>
+        <parameter name="resolution" value="360x640"/>
+        <parameter name="options" value="--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="com.koulgar.testCases.MobileStudyCases"/>
+        </classes>
+    </test>
 
-<!--    <test name="IPhone 6 - 375x666">-->
-<!--        <parameter name="testName" value="IPhone 6 Safari - 375x667"/>-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <parameter name="platform" value="LINUX"/>-->
-<!--        <parameter name="resolution" value="375x666"/>-->
-<!--        <parameter name="options" value="&#45;&#45;user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>-->
-<!--        <classes>-->
-<!--            <class name="com.koulgar.testCases.MobileStudyCases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="IPhone 6 - 375x666">
+        <parameter name="testName" value="IPhone 6 Safari - 375x667"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="platform" value="LINUX"/>
+        <parameter name="resolution" value="375x666"/>
+        <parameter name="options" value="--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="com.koulgar.testCases.MobileStudyCases"/>
+        </classes>
+    </test>
 
-<!--    <test name="Android Chrome - 360x640">-->
-<!--        <parameter name="testName" value="Android Chrome - 360x640"/>-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <parameter name="platform" value="LINUX"/>-->
-<!--        <parameter name="resolution" value="360x640"/>-->
-<!--        <parameter name="options" value="&#45;&#45;user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>-->
-<!--        <classes>-->
-<!--            <class name="com.koulgar.testCases.MobileStudyCases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Android Chrome - 360x640">
+        <parameter name="testName" value="Android Chrome - 360x640"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="platform" value="LINUX"/>
+        <parameter name="resolution" value="360x640"/>
+        <parameter name="options" value="--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="com.koulgar.testCases.MobileStudyCases"/>
+        </classes>
+    </test>
 
-<!--    <test name="Android Chrome - 375x666">-->
-<!--        <parameter name="testName" value="Android Chrome - 375x667"/>-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <parameter name="platform" value="LINUX"/>-->
-<!--        <parameter name="resolution" value="375x666"/>-->
-<!--        <parameter name="options" value="&#45;&#45;user-agent=    Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36-->
-<!--"/>-->
-<!--        <classes>-->
-<!--            <class name="com.koulgar.testCases.MobileStudyCases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Android Chrome - 375x666">
+        <parameter name="testName" value="Android Chrome - 375x667"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="platform" value="LINUX"/>
+        <parameter name="resolution" value="375x666"/>
+        <parameter name="options" value="--user-agent=    Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36
+"/>
+        <classes>
+            <class name="com.koulgar.testCases.MobileStudyCases"/>
+        </classes>
+    </test>
 
 </suite>

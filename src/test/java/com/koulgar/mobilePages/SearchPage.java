@@ -10,16 +10,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
 
-    private WebDriver driver;
-    private Actions actions;
-
-    private HelperMethods helperMethods;
-
     @FindBy(xpath = "//label[@for=\"kiralik\"]")
     private WebElement rentalButton;
 
     @FindBy(xpath = "//input[@id=\"detailed-search\"]")
     private WebElement searchBar;
+
+    private WebDriver driver;
+    private HelperMethods hp;
 
     public SearchPage(WebDriver driver) {
         System.out.println("Creating \"SearchPage\" Objects..");
@@ -27,14 +25,18 @@ public class SearchPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void searchForAdvert(String searchWord) {
+    public void searchForAdvert(String type, String searchWord) {
         System.out.println("Clicking on search bar and searching for advert");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
+        hp = new HelperMethods(driver);
 
         //Writing word to be searched to search bar and submitting
-        this.searchBar = helperMethods.driverWait(10,searchBar);
-        actions.click(rentalButton).perform();
-        actions.moveToElement(searchBar).click().sendKeys(searchWord).sendKeys(Keys.ENTER).perform();
+        searchBar = hp.driverWait(10,searchBar);
+        if (type.contains("Kiralık")) {
+            hp.clickOnElement(rentalButton);
+        }
+        hp.clickOnElement(searchBar);
+        hp.sendKeysOnElement(searchWord);
+        hp.sendKeysOnElement(Keys.ENTER);
+
     }
 }

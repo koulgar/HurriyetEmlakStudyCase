@@ -1,6 +1,7 @@
 package com.koulgar.mobilePages;
 
 import com.koulgar.helperMethods.HelperMethods;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,11 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FiltersSegment {
-
-    private WebDriver driver;
-    private Actions actions;
-    private JavascriptExecutor js;
-    private HelperMethods helperMethods;
 
     @FindBy(xpath = "//*[@id=\"list-detail-search\"]")
     private WebElement detailedSearchButton;
@@ -24,29 +20,14 @@ public class FiltersSegment {
     @FindBy(xpath = "//span[text()=\"İl Seçiniz\"]")
     private WebElement specifyCountyButton;
 
-    @FindBy(xpath = "//span[text()=\"İstanbul\"]")
-    private WebElement specifyCounty;
-
-    @FindBy(xpath = "//span[text()=\"İstanbul\"]//ancestor::div[contains(@class,\"detail-search-item\")]/div[3]/a")
-    private WebElement okLocation;
-
     @FindBy(xpath = "//li[contains(text(),\"Fiyat Aralığı\")]")
     private WebElement priceRangeBox;
 
     @FindBy(xpath = "//input[@id=\"maxfiyatAraligi\"]")
     private WebElement specifyMaxPrice;
 
-    @FindBy(xpath = "//input[@id=\"maxfiyatAraligi\"]//ancestor::div[contains(@class,\"detail-search-item\")]/div[3]/a")
-    private WebElement okPriceRange;
-
     @FindBy(xpath = "//li[contains(text(),\"Oda Sayısı\")]")
     private WebElement apartmentSizeBox;
-
-    @FindBy(xpath = "//label[contains(text(),\"2+1\")]")
-    private WebElement specifyApartmentSize;
-
-    @FindBy(xpath = "//label[contains(text(),\"2+1\")]//ancestor::div[contains(@class,\"detail-search-item\")]/div[3]/a")
-    private WebElement okApartmentSize;
 
     @FindBy(xpath = "//li[contains(text(),\"Brüt Metrekare\")]")
     private WebElement apartmentAreaBox;
@@ -54,11 +35,13 @@ public class FiltersSegment {
     @FindBy(xpath = "//*[@id=\"maxMetrekare\"]")
     private WebElement maxApartmentArea;
 
-    @FindBy(xpath = "//*[@id=\"maxMetrekare\"]//ancestor::div[contains(@class,\"detail-search-item\")]/div[3]/a")
-    private WebElement okApartmentArea;
-
     @FindBy(xpath = "//*[@id=\"show-more-search-results\"]")
     private WebElement submitFiltersButton;
+
+    private WebDriver driver;
+    private Actions actions;
+    private JavascriptExecutor js;
+    private HelperMethods hp;
 
     public FiltersSegment(WebDriver driver) {
         System.out.println("Creating \"SearchResultsPage\" Objects..");
@@ -68,107 +51,91 @@ public class FiltersSegment {
 
     public void clickOnDetailedSearch() {
         System.out.println("Starting detailed search");
-        helperMethods = new HelperMethods(driver);
-        actions = new Actions(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //clicking on detailed search
-        this.detailedSearchButton = helperMethods.driverWait(4, detailedSearchButton);
-        actions.click(detailedSearchButton).perform();
+        hp.waitScrollAndClickOnElement(detailedSearchButton);
     }
 
     public void specifyLocation(String county) {
         System.out.println("Specifying county");
-        helperMethods = new HelperMethods(driver);
-        actions = new Actions(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //clicking on select county box
-        this.selectLocationBox = helperMethods.driverWait(4, selectLocationBox);
-        actions.click(selectLocationBox).perform();
+        hp.waitScrollAndClickOnElement(selectLocationBox);
 
         //specifying county
-        this.specifyCountyButton = helperMethods.driverWait(4, specifyCountyButton);
-        actions.click(specifyCountyButton).perform();
+        hp.waitScrollAndClickOnElement(specifyCountyButton);
 
         //searching for desired county
-        actions.sendKeys(county).perform();
+        hp.sendKeysOnElement(county);
 
         //selecting desired county
-        this.specifyCounty = helperMethods.driverWait(4, specifyCounty);
-        actions.click(specifyCounty).perform();
+        WebElement specifyCounty = driver.findElement(By.xpath("//span[text()=\"" + county + "\"]"));
+        hp.waitScrollAndClickOnElement(specifyCounty);
 
         //Press Ok button
-        this.okLocation = helperMethods.driverWait(4, okLocation);
-        actions.moveToElement(okLocation).click().perform();
+        WebElement okLocation = getOkButton(specifyCounty);
+        hp.waitScrollAndClickOnElement(okLocation);
     }
 
     public void specifyPriceRange(String maxPrice) {
         System.out.println("Specifying price range");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //Clicking on price range button
-        this.priceRangeBox = helperMethods.driverWait(4, priceRangeBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", priceRangeBox);
-        actions.click(priceRangeBox).perform();
+        hp.waitScrollAndClickOnElement(priceRangeBox);
 
         //Specifying max price
-        this.specifyMaxPrice = helperMethods.driverWait(4, specifyMaxPrice);
-        actions.click(specifyMaxPrice).sendKeys(maxPrice).perform();
+        hp.waitScrollAndClickOnElement(specifyMaxPrice);
+        hp.sendKeysOnElement(maxPrice);
 
         //Press Ok button
-        this.okPriceRange = helperMethods.driverWait(4, okPriceRange);
-        actions.click(okPriceRange).perform();
+        WebElement okPriceRange = getOkButton(specifyMaxPrice);
+        hp.waitScrollAndClickOnElement(okPriceRange);
     }
 
-    public void specifyApartmentSize() {
+    public void specifyApartmentSize(String apartmentSize) {
         System.out.println("Specifying apartment size");
-        helperMethods = new HelperMethods(driver);
-        actions = new Actions(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
-        //clicking on aparment size button
-        this.apartmentSizeBox = helperMethods.driverWait(4, apartmentSizeBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", apartmentSizeBox);
-        actions.click(apartmentSizeBox).perform();
+        //clicking on apartment size button
+        hp.waitScrollAndClickOnElement(apartmentSizeBox);
 
         //Specifying apartment size
-        this.specifyApartmentSize = helperMethods.driverWait(4, specifyApartmentSize);
-        actions.click(specifyApartmentSize).perform();
+        WebElement specifyApartmentSize = driver.findElement(By.xpath("//label[contains(text(),'" + apartmentSize + "')]"));
+        hp.waitScrollAndClickOnElement(specifyApartmentSize);
 
         //Press Ok button
-        this.okApartmentSize = helperMethods.driverWait(4, okApartmentSize);
-        actions.click(okApartmentSize).perform();
+        WebElement okApartmentSize = getOkButton(specifyApartmentSize);
+        hp.waitScrollAndClickOnElement(okApartmentSize);
     }
 
     public void specifyApartmentArea(String maxArea) {
         System.out.println("Specifying apartment area");
-        helperMethods = new HelperMethods(driver);
-        actions = new Actions(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //clicking on aparment size button
-        this.apartmentAreaBox = helperMethods.driverWait(4, apartmentAreaBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", apartmentAreaBox);
-        actions.click(apartmentAreaBox).perform();
+        hp.waitScrollAndClickOnElement(apartmentAreaBox);
 
         //Specifying max price
-        this.maxApartmentArea = helperMethods.driverWait(4, maxApartmentArea);
-        actions.click(maxApartmentArea).sendKeys(maxArea).perform();
+        hp.waitScrollAndClickOnElement(maxApartmentArea);
+        hp.sendKeysOnElement(maxArea);
 
         //Press Ok button
-        this.okApartmentArea = helperMethods.driverWait(4, okApartmentArea);
-        actions.click(okApartmentArea).perform();
+        WebElement okApartmentArea = getOkButton(maxApartmentArea);
+        hp.waitScrollAndClickOnElement(okApartmentArea);
     }
 
     public void submitFilters() {
         System.out.println("Submitting filters");
-        helperMethods = new HelperMethods(driver);
+        hp = new HelperMethods(driver);
         actions = new Actions(driver);
 
-        this.submitFiltersButton = helperMethods.driverWait(4,submitFiltersButton);
-        actions.click(submitFiltersButton).perform();
+        hp.waitScrollAndClickOnElement(submitFiltersButton);
+    }
+
+    public WebElement getOkButton(WebElement element) {
+        return element.findElement(By.xpath(".//ancestor::div[contains(@class,\"detail-search-item\")]/div[3]/a"));
     }
 }

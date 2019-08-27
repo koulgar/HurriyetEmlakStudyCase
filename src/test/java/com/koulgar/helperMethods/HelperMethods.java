@@ -1,6 +1,7 @@
 package com.koulgar.helperMethods;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -42,6 +43,11 @@ public class HelperMethods {
     }
 
     public void sendKeysOnElement(String keysToSend) {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(keysToSend).perform();
+    }
+
+    public void sendKeysOnElement(Keys keysToSend) {
         Actions actions = new Actions(driver);
         actions.sendKeys(keysToSend).perform();
     }

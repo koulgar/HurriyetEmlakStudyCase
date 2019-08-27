@@ -1,4 +1,4 @@
-package com.koulgar.desktopPages;
+package com.koulgar.mobilePages;
 
 import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +11,13 @@ import java.util.List;
 
 public class AdvertPage {
 
-    @FindBy(xpath = "//a[contains(@title,'Telefonu Göster')]")
+    @FindBy(xpath = "//*[@id=\"ownerPhoneNumbersTitle\"]")
     private WebElement revealPhoneNumberButton;
 
-    @FindBy(xpath = "//ul[@class='phone-numbers']/li")
+    @FindBy(xpath = "//*[@id=\"ownerPhoneNumbers\"]/ul/li")
     private List<WebElement> phoneNumberList;
 
     private WebDriver driver;
-
     private HelperMethods hp;
 
     public AdvertPage(WebDriver driver) {
@@ -40,8 +39,6 @@ public class AdvertPage {
         for (WebElement element : phoneNumberList) {
             phoneNumbers.add(element.getText());
         }
-
         return phoneNumbers;
     }
-
 }
