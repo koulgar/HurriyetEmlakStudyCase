@@ -3,7 +3,7 @@
 # Content
 * [Why and What](#why-and-what)
 * [Technologies](#technologies)
-* [Getting Started](#getting-started)
+* [Getting Started with Zalenium](#getting-started-with-zalenium)
   * [Prerequisites](#prerequisites)
   * [Setup](#setup)
   * [Run](#run)
@@ -25,7 +25,7 @@
 * **Zalenium**
 * **Docker**
 
-## Getting Started
+## Getting Started with Zalenium
 * Following steps will be explaining how to setup your Zalenium environment, how to clone this project and run in on your system. (This readMe file is partially created by help of [this](https://github.com/zalando/zalenium#getting-started) documentation.)
 
 ### Prerequisites
