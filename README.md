@@ -65,8 +65,8 @@ If everything is fine you should see something like this in your terminal.(with 
 
 ### Importing Project with Maven
 * Importing project as maven project.
-  * For Eclipse you can check **[this]**(https://www.lagomframework.com/documentation/1.5.x/java/EclipseMavenInt.html) link.
-  * For IntelliJ you can check **[this]**(https://www.lagomframework.com/documentation/1.5.x/java/IntellijMaven.html) link.
+  * For Eclipse you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/EclipseMavenInt.html) link.
+  * For IntelliJ you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/IntellijMaven.html) link.
   
 ### Running Test Cases
 * Run "testng.xml" file to run all test cases. 
