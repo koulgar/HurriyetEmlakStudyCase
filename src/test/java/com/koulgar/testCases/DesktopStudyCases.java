@@ -75,20 +75,23 @@ public class DesktopStudyCases {
         searchResultsPage = new SearchResultsPage(driver);
 
         //Select an advertizement
-        searchResultsPage.selectAdvert();
+        searchResultsPage.selectAdvert(5);
 
         //Create "AdvertizementPage" Objects
         advertizementPage = new AdvertizementPage(driver);
 
         //Reveal and get Phone Number
-        String phoneNumber = advertizementPage.getPhoneNumber();
+        List<String> phoneNumbers = advertizementPage.getPhoneNumber();
         Pattern pattern = Pattern.compile("(([\\+]90?)|([0]?))([ ]?)((\\([0-9]{3}\\))|([0-9]{3}))([ ]?)([0-9]{3})(\\s*[\\-]?)([0-9]{2})(\\s*[\\-]?)([0-9]{2})");
 
         //Check if phoneNumber variable has an actual phone number
-        Assert.assertTrue(pattern.matcher(phoneNumber).matches());
+        for (String phoneNumber : phoneNumbers) {
+            Assert.assertTrue(pattern.matcher(phoneNumber).matches());
 
-        //Print found phone number
-        System.out.println("Phone number of advert : " + phoneNumber);
+            //Print found phone number
+            System.out.println("Phone number of advert : " + phoneNumber);
+        }
+
     }
 
     @Test(priority = 2)
@@ -112,7 +115,7 @@ public class DesktopStudyCases {
         searchResultsPage = new SearchResultsPage(driver);
 
         //Check results if suitable with filters
-        List<String> resultList = searchResultsPage.getAdvertInfo();
+        List<String> resultList = searchResultsPage.getAdvertInfo(5);
 
         Assert.assertTrue(resultList.get(0).contains("İstanbul"));
         Assert.assertEquals(resultList.get(2), "2+1");

@@ -19,8 +19,8 @@ public class SearchResultsPage {
     private HelperMethods helperMethods;
     private JavascriptExecutor js;
 
-    @FindBy(xpath = "//*[@id=\"listview\"]/div[3]")
-    private WebElement firstAdvertOnList;
+    @FindBy(xpath = "//div[@id=\"listview\"]/div[contains(@class,\"list-container-projects\")]")
+    private List<WebElement> advertList;
 
     public SearchResultsPage(WebDriver driver) {
         System.out.println("Creating \"SearchResultPage\" Objects..");
@@ -28,32 +28,31 @@ public class SearchResultsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void selectAdvert() {
+    public void selectAdvert(Integer advertOnRow) {
         System.out.println("Selecting proper advert");
         actions = new Actions(driver);
         helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
 
         //Selecting proper advert
-        this.firstAdvertOnList = helperMethods.driverWait(10, firstAdvertOnList);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", firstAdvertOnList);
-        actions.click(firstAdvertOnList).perform();
+        WebElement desiredAdvertToSelect = getAdvertFromList(advertList,advertOnRow);
+        helperMethods.waitForVisibilityAndScrollToElement(desiredAdvertToSelect);
+        actions.click(desiredAdvertToSelect).perform();
     }
 
-    public List<String> getAdvertInfo() {
+    public List<String> getAdvertInfo(Integer advertOnRow) {
         System.out.println("Getting advert info");
         helperMethods = new HelperMethods(driver);
         actions = new Actions(driver);
-        js = (JavascriptExecutor) driver;
 
         //Selecting filtered advert result
-        this.firstAdvertOnList = helperMethods.driverWait(10, firstAdvertOnList);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", firstAdvertOnList);
+        WebElement desiredAdvertToGetInfo = getAdvertFromList(advertList, advertOnRow);
+        helperMethods.waitForVisibilityAndScrollToElement(desiredAdvertToGetInfo);
 
         //Getting texts from web elements of advert
-        List<WebElement> results = firstAdvertOnList.findElements(By.xpath("./div/div/ul//li"));
+        List<WebElement> results = desiredAdvertToGetInfo.findElements(By.xpath(".//ul//li"));
         List<String> resultList = new ArrayList<>();
 
+        //Getting texts from inner elements
         for (WebElement element : results) {
             resultList.add(element.getText());
         }
@@ -63,5 +62,10 @@ public class SearchResultsPage {
 
         return resultList;
     }
+
+    private WebElement getAdvertFromList(List<WebElement> webElements,Integer advertOnRow) {
+        return webElements.get(advertOnRow-1);
+    }
+
 
 }
