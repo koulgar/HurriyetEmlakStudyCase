@@ -11,8 +11,7 @@
   * [Cloning Project from Github](#cloning-project-from-github)
   * [Installing Maven](#installing-maven)
   * [Importing Project with Maven](#importing-project-with-maven)
-  * [Build Tests](#build-tests)
-  * [Running Test Cases](#running-test-cases)
+  * [Build and Run Test Cases](#build-and-run-test-cases)
 * [Docker Run Parameters](#docker-run-parameters)
 * [Checkout If Tests Are Too Slow](#checkout-if-tests-are-too-slow)
 
@@ -75,14 +74,7 @@ If everything is fine you should see something like this in your terminal.(with 
   * For Eclipse you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/EclipseMavenInt.html) link.
   * For IntelliJ you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/IntellijMaven.html) link.
   
-## Build Tests
-* Go to project directory where your pom.file exists via terminal.
-* To build test use,
-```
-  $ mvn clean test -DsuiteXmlFile=testng.xml
-```
-
-### Running Test Cases
+### Build and Run Test Cases
 * Run "testng.xml" file inside your IDE to run all test cases.
 or
 * Use terminal with following command,
