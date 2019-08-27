@@ -4,6 +4,7 @@ import com.koulgar.mobilePages.AdvertizementPage;
 import com.koulgar.mobilePages.HomePage;
 import com.koulgar.mobilePages.SearchPage;
 import com.koulgar.mobilePages.SearchResultsPage;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -44,11 +45,11 @@ public class MobileStudyCases {
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         driver = new RemoteWebDriver(new URL(nodeUrl), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://www.hurriyetemlak.com/");
+        driver.get("http://www.hurriyetemlak.com");
         driver.manage().window().maximize();
     }
 
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1)
     public void testCase1() {
 
         //Create "HomePage" Objects
@@ -86,8 +87,8 @@ public class MobileStudyCases {
 
     @Test(priority = 2)
     public void testCase11() throws InterruptedException {
-//        //Navigate to main page
-//        driver.navigate().to("https://www.hurriyetemlak.com/");
+        //Navigate to main page
+        driver.navigate().to("https://www.hurriyetemlak.com/");
 
         //Create "HomePage" Objects
         homePage = new HomePage(driver);
