@@ -11,14 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FiltersSegment {
 
-    private WebDriver driver;
-    private Actions actions;
-    private HelperMethods helperMethods;
-    private JavascriptExecutor js;
-
-    @FindBy(xpath = "//li//a[@title=\"Kiralık Daire\"]")
-    private WebElement rentalType;
-
     @FindBy(xpath = "//div//a[@title=\"Konum\"]")
     private WebElement selectLocationBox;
 
@@ -43,11 +35,13 @@ public class FiltersSegment {
     @FindBy(xpath = "//a[@title=\"Oda + Salon\"]")
     private WebElement selectApartmentSizeBox;
 
-    @FindBy(xpath = "//input[following-sibling::text()[contains(.,\"2+1\")]]")
-    private WebElement specifyApartmentSize;
-
     @FindBy(xpath = "//button[text()=\"Ara\" and @class=\"btn btn-lg btn-green mobile-search-button w100p\"]")
     private WebElement filteredSearchSubmitButton;
+
+    private WebDriver driver;
+    private Actions actions;
+    private HelperMethods hp;
+    private JavascriptExecutor js;
 
     public FiltersSegment(WebDriver driver) {
         System.out.println("Creating \"SearchResultPage\" Objects..");
@@ -55,119 +49,95 @@ public class FiltersSegment {
         PageFactory.initElements(driver, this);
     }
 
-    private void selectRentalType() {
+    private void selectRentalType(String rentalType) {
         System.out.println("selecting rental type");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //Select rental Type
-        this.rentalType = helperMethods.driverWait(10, rentalType);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3);", rentalType);
-        actions.click(rentalType).perform();
+        WebElement rentalTypeEl = driver.findElement(By.xpath("//li//a[@title='" + rentalType + "']"));
+        hp.waitScrollAndClickOnElement(rentalTypeEl);
     }
 
     private void selectLocation(String location) {
         System.out.println("selecting location");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //Scroll down to element
-        this.selectLocationBox = helperMethods.driverWait(4, selectLocationBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectLocationBox);
+        hp.waitForVisibilityAndScrollToElement(selectLocationBox);
 
         //If location box is not active click on it
         if (selectLocationBox.getAttribute("class").equals("facet-box")) {
-            actions.click(selectLocationBox).perform();
+            hp.clickOnElement(selectLocationBox);
         }
 
-        //Click on select province box
-        this.selectCountyBox = helperMethods.driverWait(4, selectCountyBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectCountyBox);
-        actions.click(selectCountyBox).perform();
+        //Click on select county box
+        hp.waitScrollAndClickOnElement(selectCountyBox);
 
         //Search county
-        actions.sendKeys(location).perform();
+        hp.sendKeysOnElement(location);
 
         //Click to selected county
-        this.selectCounty = helperMethods.driverWait(4, selectCounty);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectCounty);
-        actions.click(selectCounty).perform();
+        hp.waitScrollAndClickOnElement(selectCounty);
     }
 
     private void selectArea(String area) {
         System.out.println("selecting area");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //If area box is not active click on it
-        this.specifyAreaBox = helperMethods.driverWait(4, specifyAreaBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyAreaBox);
+        hp.waitForVisibilityAndScrollToElement(specifyAreaBox);
         if (specifyAreaBox.getAttribute("class").equals("facet-box")) {
-            actions.click(specifyAreaBox).perform();
+            hp.clickOnElement(specifyAreaBox);
         }
 
         //Specify max area
-        this.specifyMaxArea = helperMethods.driverWait(4, specifyMaxArea);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyMaxArea);
-        actions.click(specifyMaxArea).sendKeys(area).perform();
+        hp.waitScrollAndClickOnElement(specifyMaxArea);
+        hp.sendKeysOnElement(area);
 
     }
 
-    private void selectPrice(String price) {
+    private void selectPrice(String maxPrice) {
         System.out.println("selecting price");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //If price range box is not active click on it
-        this.specifyPriceBox = helperMethods.driverWait(4, specifyPriceBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyPriceBox);
+        hp.waitForVisibilityAndScrollToElement(specifyPriceBox);
         if (specifyPriceBox.getAttribute("class").equals("facet-box")) {
-            actions.click(specifyPriceBox).perform();
+            hp.clickOnElement(specifyPriceBox);
         }
 
         //Specify max price
-        this.specifyMaxPrice = helperMethods.driverWait(4, specifyMaxPrice);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyMaxPrice);
-        actions.click(specifyMaxPrice).sendKeys(price).perform();
+        hp.waitScrollAndClickOnElement(specifyMaxPrice);
+        hp.sendKeysOnElement(maxPrice);
     }
 
-    private void selectApartmentSize() {
+    private void selectApartmentSize(String apartmentSize) {
         System.out.println("selecting size");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
-        js = (JavascriptExecutor) driver;
+        hp = new HelperMethods(driver);
 
         //If size box is not active click on it
-        this.selectApartmentSizeBox = helperMethods.driverWait(4, selectApartmentSizeBox);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", selectApartmentSizeBox);
+        hp.waitForVisibilityAndScrollToElement(selectApartmentSizeBox);
         WebElement selectApartmentSizeBoxParent = selectApartmentSizeBox.findElement(By.xpath("./parent::div"));
         if (selectApartmentSizeBoxParent.getAttribute("class").equals("facet-box")) {
-            actions.click(selectApartmentSizeBox).perform();
+            hp.clickOnElement(selectApartmentSizeBoxParent);
         }
 
         //Specify apartment size
-        this.specifyApartmentSize = helperMethods.driverWait(4, specifyApartmentSize);
-        js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3 );", specifyApartmentSize);
-        actions.click(specifyApartmentSize).perform();
+        WebElement specifyApartmentSize = driver.findElement(By.xpath("//input[following-sibling::text()[contains(.,'" + apartmentSize + "')]]"));
+        hp.waitScrollAndClickOnElement(specifyApartmentSize);
     }
 
     private void submitFilters() {
         System.out.println("submitting filters");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
+        hp = new HelperMethods(driver);
 
         //Click on submit button
-        this.filteredSearchSubmitButton = helperMethods.driverWait(4, filteredSearchSubmitButton);
-        actions.moveToElement(filteredSearchSubmitButton).click().perform();
+        hp.clickOnElement(filteredSearchSubmitButton);
     }
 
-    public void applyFilters(String locationCounty, String maxArea, String maxPrice) throws InterruptedException {
+    public void applyFilters(String rentalType, String locationCounty, String maxArea, String maxPrice, String apartmentSize) throws InterruptedException {
         System.out.println("Looking for filters to apply..");
-        selectRentalType();
+        selectRentalType(rentalType);
         Thread.sleep(500);
         selectLocation(locationCounty);
         Thread.sleep(500);
@@ -175,7 +145,7 @@ public class FiltersSegment {
         Thread.sleep(500);
         selectPrice(maxPrice);
         Thread.sleep(500);
-        selectApartmentSize();
+        selectApartmentSize(apartmentSize);
         Thread.sleep(500);
         submitFilters();
         Thread.sleep(500);

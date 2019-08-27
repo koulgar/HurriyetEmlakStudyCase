@@ -1,6 +1,6 @@
 package com.koulgar.testCases;
 
-import com.koulgar.desktopPages.AdvertizementPage;
+import com.koulgar.desktopPages.AdvertPage;
 import com.koulgar.desktopPages.FiltersSegment;
 import com.koulgar.desktopPages.HomePage;
 import com.koulgar.desktopPages.SearchResultsPage;
@@ -28,7 +28,7 @@ public class DesktopStudyCases {
 
     private HomePage homePage;
     private SearchResultsPage searchResultsPage;
-    private AdvertizementPage advertizementPage;
+    private AdvertPage advertPage;
     private FiltersSegment filtersSegment;
 
     @Parameters({"testName", "browserName", "platform", "resolution","options"})
@@ -78,10 +78,10 @@ public class DesktopStudyCases {
         searchResultsPage.selectAdvert(5);
 
         //Create "AdvertizementPage" Objects
-        advertizementPage = new AdvertizementPage(driver);
+        advertPage = new AdvertPage(driver);
 
         //Reveal and get Phone Number
-        List<String> phoneNumbers = advertizementPage.getPhoneNumber();
+        List<String> phoneNumbers = advertPage.getPhoneNumber();
         Pattern pattern = Pattern.compile("(([\\+]90?)|([0]?))([ ]?)((\\([0-9]{3}\\))|([0-9]{3}))([ ]?)([0-9]{3})(\\s*[\\-]?)([0-9]{2})(\\s*[\\-]?)([0-9]{2})");
 
         //Check if phoneNumber variable has an actual phone number
@@ -109,7 +109,13 @@ public class DesktopStudyCases {
         filtersSegment = new FiltersSegment(driver);
 
         //Apply filters
-        filtersSegment.applyFilters("İstanbul", "150", "4000");
+        String rentalType = "Kiralık Daire";
+        String locationCounty = "İstanbul";
+        String maxArea = "150";
+        String maxPrice = "4000";
+        String aparmentSize = "2+1";
+
+        filtersSegment.applyFilters(rentalType,locationCounty, maxArea, maxPrice,aparmentSize);
 
         //Create "SearchResultsPage" Objects
         searchResultsPage = new SearchResultsPage(driver);
@@ -117,10 +123,10 @@ public class DesktopStudyCases {
         //Check results if suitable with filters
         List<String> resultList = searchResultsPage.getAdvertInfo(5);
 
-        Assert.assertTrue(resultList.get(0).contains("İstanbul"));
-        Assert.assertEquals(resultList.get(2), "2+1");
-        Assert.assertTrue(Integer.parseInt(resultList.get(3).split(" ")[0]) <= 150);
-        Assert.assertTrue(Integer.parseInt(resultList.get(4).split(" ")[0].replace(".", "")) <= 4000);
+        Assert.assertTrue(resultList.get(0).contains(locationCounty));
+        Assert.assertEquals(resultList.get(2), aparmentSize);
+        Assert.assertTrue(Integer.parseInt(resultList.get(3).split(" ")[0]) <= Integer.parseInt(maxArea));
+        Assert.assertTrue(Integer.parseInt(resultList.get(4).split(" ")[0].replace(".", "")) <= Integer.parseInt(maxPrice));
 
     }
 

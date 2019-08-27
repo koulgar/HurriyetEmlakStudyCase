@@ -2,10 +2,8 @@ package com.koulgar.desktopPages;
 
 import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,9 +13,7 @@ import java.util.List;
 public class SearchResultsPage {
 
     private WebDriver driver;
-    private Actions actions;
-    private HelperMethods helperMethods;
-    private JavascriptExecutor js;
+    private HelperMethods hp;
 
     @FindBy(xpath = "//div[@id=\"listview\"]/div[contains(@class,\"list-container-projects\")]")
     private List<WebElement> advertList;
@@ -30,32 +26,28 @@ public class SearchResultsPage {
 
     public void selectAdvert(Integer advertOnRow) {
         System.out.println("Selecting proper advert");
-        actions = new Actions(driver);
-        helperMethods = new HelperMethods(driver);
+        hp = new HelperMethods(driver);
 
         //Selecting proper advert
-        WebElement desiredAdvertToSelect = getAdvertFromList(advertList,advertOnRow);
-        helperMethods.waitForVisibilityAndScrollToElement(desiredAdvertToSelect);
-        actions.click(desiredAdvertToSelect).perform();
+        WebElement desiredAdvertToSelect = getAdvertFromList(advertList, advertOnRow);
+        hp.waitForVisibilityAndScrollToElement(desiredAdvertToSelect);
+        hp.clickOnElement(desiredAdvertToSelect);
     }
 
     public List<String> getAdvertInfo(Integer advertOnRow) {
         System.out.println("Getting advert info");
-        helperMethods = new HelperMethods(driver);
-        actions = new Actions(driver);
+        hp = new HelperMethods(driver);
 
         //Selecting filtered advert result
         WebElement desiredAdvertToGetInfo = getAdvertFromList(advertList, advertOnRow);
-        helperMethods.waitForVisibilityAndScrollToElement(desiredAdvertToGetInfo);
+        hp.waitForVisibilityAndScrollToElement(desiredAdvertToGetInfo);
 
         //Getting texts from web elements of advert
         List<WebElement> results = desiredAdvertToGetInfo.findElements(By.xpath(".//ul//li"));
         List<String> resultList = new ArrayList<>();
 
         //Getting texts from inner elements
-        for (WebElement element : results) {
-            resultList.add(element.getText());
-        }
+        for (WebElement element : results) resultList.add(element.getText());
 
         //Printing out advert info
         System.out.println(resultList.toString());
@@ -63,8 +55,8 @@ public class SearchResultsPage {
         return resultList;
     }
 
-    private WebElement getAdvertFromList(List<WebElement> webElements,Integer advertOnRow) {
-        return webElements.get(advertOnRow-1);
+    private WebElement getAdvertFromList(List<WebElement> webElements, Integer advertOnRow) {
+        return webElements.get(advertOnRow - 1);
     }
 
 

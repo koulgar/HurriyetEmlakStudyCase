@@ -3,6 +3,7 @@ package com.koulgar.helperMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -28,6 +29,21 @@ public class HelperMethods {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         element = driverWait(10,element);
         js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3);", element);
+    }
+
+    public void clickOnElement(WebElement element) {
+        Actions actions = new Actions(driver);
+        actions.click(element).perform();
+    }
+
+    public void waitScrollAndClickOnElement(WebElement element) {
+        waitForVisibilityAndScrollToElement(element);
+        clickOnElement(element);
+    }
+
+    public void sendKeysOnElement(String keysToSend) {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(keysToSend).perform();
     }
 
 }
