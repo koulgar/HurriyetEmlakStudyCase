@@ -7,9 +7,11 @@
   * [Prerequisites](#prerequisites)
   * [Setup](#setup)
   * [Run](#run)
-* [Getting Test Case](#getting-test-case)
+* [Getting Started with Test Cases](#getting-started-with-test-cases)
   * [Cloning Project from Github](#cloning-project-from-github)
+  * [Installing Maven](#installing-maven)
   * [Importing Project with Maven](#importing-project-with-maven)
+  * [Build Tests](#build-tests)
   * [Running Test Cases](#running-test-cases)
 * [Docker Run Parameters](#docker-run-parameters)
 * [Checkout If Tests Are Too Slow](#checkout-if-tests-are-too-slow)
@@ -53,7 +55,7 @@
 If everything is fine you should see something like this in your terminal.(with "--desiredContainers 8")
 ![alt text](https://i.ibb.co/vPX0Y2x/nodes.png "created nodes 8")
 
-## Getting Test Case
+## Getting Started with Test Cases
 * This part explains how to clone this project from Github and run it on your system and in case of it's running too slow on your system will contain additional information to reduce source usage.
 
 ### Cloning Project from Github
@@ -62,14 +64,26 @@ If everything is fine you should see something like this in your terminal.(with 
 ```
   $ git clone https://github.com/koulgar/HurriyetEmlakStudyCase
 ```
+### Installing Maven
+* Installing maven,
+  * For Windows you can check [this](https://docs.wso2.com/display/IS323/Installing+Apache+Maven+on+Windows) link.
+  * For Ubuntu you can check [this](https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/) link.
+  * For MacOs you can check [this](http://www.codebind.com/mac-osx/install-maven-mac-os/) link.
 
 ### Importing Project with Maven
 * Importing project as maven project.
   * For Eclipse you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/EclipseMavenInt.html) link.
   * For IntelliJ you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/IntellijMaven.html) link.
   
+## Build Tests
+* Go to project directory where your pom.file exists via terminal.
+* To build test use,
+```
+  $ mvn clean test -DsuiteXmlFile=testng.xml
+```
+
 ### Running Test Cases
-* Run "testng.xml" file to run all test cases. 
+* Run "testng.xml" file inside your IDE to run all test cases. 
 
 ## Docker Run Parameters
 * **--rm** - remove container automatically after it exits
