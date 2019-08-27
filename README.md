@@ -15,7 +15,7 @@
 * [Checkout If Tests Are Too Slow](#checkout-if-tests-are-too-slow)
 
 ## Why and What
-* This project created for study purposes and simulates user actions on **[hurriyetemlak.com](http://www.hurriyetemlak.com)** (which is a real estate advertizement website) such as checking for getting advertizement information, filter usage and taking a close look to published advertizements. 
+* This project created for study purposes and simulates user actions on **[hurriyetemlak.com](http://www.hurriyetemlak.com)** (which is a real estate advertizement website) such as checking for getting advertisement information, filter usage and taking a close look to published advertizements. 
 * Project uses browser user-agent information to simulate platforms like Linux, Macintosh, Android, Chrome and Safari on screenresolutions such as 1920x1080, 1366x768, 360x640, 375x667.
 
 ## Technologies
