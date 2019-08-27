@@ -53,10 +53,12 @@ public class DesktopStudyCases {
 
         //Manage cookies to get consistent pages
         driver.get("http://www.hurriyetemlak.com");
-        driver.manage().deleteCookieNamed("desktop2019");
-        Cookie cookie = new Cookie("desktop2019", "0");
-        driver.manage().addCookie(cookie);
-        driver.navigate().refresh();
+        if (driver.manage().getCookieNamed("desktop2019") != null) {
+            driver.manage().deleteCookieNamed("desktop2019");
+            Cookie cookie = new Cookie("desktop2019", "0");
+            driver.manage().addCookie(cookie);
+            driver.navigate().refresh();
+        }
         driver.manage().window().maximize();
     }
 

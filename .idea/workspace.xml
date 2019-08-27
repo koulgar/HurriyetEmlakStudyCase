@@ -4,7 +4,9 @@
     <list default="true" id="142150d0-3ca7-4e59-a7ba-3ab87bb79048" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/DesktopStudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/DesktopStudyCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/MobileStudyCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/koulgar/testCases/MobileStudyCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/DesktopStudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/DesktopStudyCases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/MobileStudyCases.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/koulgar/testCases/MobileStudyCases.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testng.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +212,7 @@
       <workItem from="1566810894118" duration="32290000" />
       <workItem from="1566854401912" duration="4575000" />
       <workItem from="1566861903890" duration="2250000" />
-      <workItem from="1566865520113" duration="230000" />
+      <workItem from="1566865520113" duration="918000" />
     </task>
     <servers />
   </component>
