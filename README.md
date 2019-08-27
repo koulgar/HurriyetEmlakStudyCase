@@ -76,7 +76,7 @@ If everything is fine you should see something like this in your terminal.(with 
   
 ### Build and Run Test Cases
 * Run "testng.xml" file inside your IDE to run all test cases.
-or
+  * or
 * Use terminal with following command,
 ```
   $ mvn clean test -Dsurefire.suiteXmlFiles=<Full path to your testng.xml file>
