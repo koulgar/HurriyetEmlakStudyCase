@@ -16,7 +16,7 @@
 
 ## Why and What
 * This project created for study purposes and simulates user actions on **[hurriyetemlak.com](http://www.hurriyetemlak.com)** (which is a real estate advertizement website) such as checking for getting advertisement information, filter usage and taking a close look to published advertizements. 
-* Project uses browser user-agent information to simulate platforms like Linux, Macintosh, Android, Chrome and Safari on screenresolutions such as 1920x1080, 1366x768, 360x640, 375x667.
+* Project uses browser user-agent information to simulate platforms like Linux, Macintosh, Android, Chrome and Safari on screen resolutions such as 1920x1080, 1366x768, 360x640, 375x667.
 
 ## Technologies
 * **IntelliJ Idea**
@@ -81,11 +81,11 @@ If everything is fine you should see something like this in your terminal.(with 
 * **--desiredContainers** - Number of nodes/containers created on startup (2 is default value.)
 
 ## Checkout If Tests Are Too Slow
-* On docker run parameters "--desiredContainers 8" is not a default parameter. In case of test process are too slow on your system you can just use fewer containers instead of "8" or just delete whole parameter for default value which is assigned as "2".
+* On docker run parameters "--desiredContainers 8" is not a default parameter. In case of test process takes too long on your system you can just use fewer containers instead of "8" or just delete whole parameter for default value which is assigned as "2".
 In this case you should see something like this when you run docker image.
 
 ![alt text](https://i.ibb.co/tBGbqtZ/unknown.png "created nodes 2")
 
-* Another option is to use fewer threads in your "testng.xml" file. Threads are amount of simultaneous test processes that your system will run. Which in this project it's assigned as "8". Using fewer threads such as "3" will ease down things. You can see location of "threads" parameter below.
+* Another option is to use fewer threads in your "testng.xml" file. Threads are amount of simultaneous test process  that your system will run. Which in this project it's assigned as "8". Using fewer threads such as "3" will ease down things. You can see location of "threads" parameter below.
 
 ![alt text](https://i.ibb.co/MZdyJ7S/unknown.png "threads in testng.xml")
