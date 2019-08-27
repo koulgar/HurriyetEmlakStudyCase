@@ -7,12 +7,15 @@
   * [Run](#run)
 * [Getting Test Case](#getting-test-case)
   * [Cloning Project from Github](#cloning-project-from-github)
-*
-## Why & What
+  * [Importing Project with Maven](#importing-project-with-maven)
+  * [Running Test Cases](#running-test-cases)
+* 
+## Why and What
 * This project created for study purposes and simulates user actions on [hurriyetemlak.com](#http://www.hurriyetemlak.com)(which is a real estate advertizement website) such as checking for getting advertizement information, filter usage and taking a close look to published advertizements. 
 * Project uses browser user-agent information to simulate platforms like Linux, Macintosh, Android, Chrome and Safari on screenresolutions such as 1920x1080, 1366x768, 360x640, 375x667.
 
 ## Technologies
+* IntelliJ Idea
 * Selenium
 * TestNG
 * Zalenium
@@ -28,11 +31,11 @@
 ### Setup
 * Pull the [docker-selenium](https://github.com/elgalu/docker-selenium) image.
 ```
- # Pull docker-selenium
-  docker pull elgalu/selenium
+  # Pull docker-selenium
+  $ docker pull elgalu/selenium
 
   # Pull Zalenium
-  docker pull dosel/zalenium
+  $ docker pull dosel/zalenium
 ```
 
 ### Run
@@ -48,3 +51,16 @@
 * This part explains how to clone this project from Github and run it on your system and in case of it's running too slow on your system will contain additional information to reduce source usage.
 
 ### Cloning Project from Github
+* Go to your folder that you desire project to be in.
+* Clone project from Github.
+```
+  $ git clone https://github.com/koulgar/HurriyetEmlakStudyCase
+```
+
+### Importing Project with Maven
+* Importing project as maven project.
+  * For Eclipse you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/EclipseMavenInt.html) link.
+  * For IntelliJ you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/IntellijMaven.html) link.
+  
+### Running Test Cases
+* Run "testng.xml" file to run all test cases. 
