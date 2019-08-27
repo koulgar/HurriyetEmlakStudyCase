@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/zalando/zalenium/master/docs/img/logo_zalenium_wide.png "zaleniumlogo")
+
 # Content
 * [Why and What](#why-and-what)
 * [Technologies](#technologies)
