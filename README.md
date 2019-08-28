@@ -75,6 +75,11 @@ If everything is fine you should see something like this in your terminal.(with 
   * For IntelliJ you can check [this](https://www.lagomframework.com/documentation/1.5.x/java/IntellijMaven.html) link.
   
 ### Build and Run Test Cases
+* Go to your project folder and use command below in order to build.
+```
+  $ mvn clean package
+```
+
 * Run "testng.xml" file inside your IDE to run all test cases.
   * or
 * Use terminal with following command,
