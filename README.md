@@ -18,6 +18,8 @@
 ## Why and What
 * This project created for study purposes and simulates user actions on **[hurriyetemlak.com](http://www.hurriyetemlak.com)** (which is a real estate advertizement website) such as checking for getting advertisement information, filter usage and taking a close look to published advertizements. 
 * Project uses browser user-agent information to simulate platforms like Linux, Macintosh, Android, Chrome and Safari on screen resolutions such as 1920x1080, 1366x768, 360x640, 375x667.
+* After setting up you can watch tests live at [localhost:4444/grid/live/admin](http://localhost:4444/grid/admin/live) or you can watch replays of test cases at [http://localhost:4444/dashboard](http://localhost:4444/dashboard).
+* And don't forget that zalenium docker image ***has to be running*** first before you run the test cases.
 
 ## Technologies
 * **IntelliJ Idea**
