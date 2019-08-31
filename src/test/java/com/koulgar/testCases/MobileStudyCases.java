@@ -1,8 +1,8 @@
 package com.koulgar.testCases;
 
+import com.koulgar.mobilePages.SearchPage;
 import com.koulgar.mobilePages.AdvertPage;
 import com.koulgar.mobilePages.HomePage;
-import com.koulgar.mobilePages.SearchPage;
 import com.koulgar.mobilePages.SearchResultsPage;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
