@@ -4,7 +4,6 @@ import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,11 +22,11 @@ public class SearchPage {
         System.out.println("Creating \"SearchPage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.hp = new HelperMethods(driver);
     }
 
     public void searchForAdvert(String type, String searchWord) {
         System.out.println("Clicking on search bar and searching for advert");
-        hp = new HelperMethods(driver);
 
         //Writing word to be searched to search bar and submitting
         searchBar = hp.driverWait(10,searchBar);

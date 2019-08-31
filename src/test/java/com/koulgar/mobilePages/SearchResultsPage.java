@@ -22,11 +22,12 @@ public class SearchResultsPage {
         System.out.println("Creating \"SearchResultsPage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.hp = new HelperMethods(driver);
+        this.filtersSegment = new FiltersSegment(driver);
     }
 
     public void selectAdvert(Integer advertOnRow) {
         System.out.println("Selecting proper advert");
-        hp = new HelperMethods(driver);
 
         //Getting advert list
         WebElement desiredAdvertToSelect = getAdvertFromList(advertList, advertOnRow);
@@ -37,9 +38,6 @@ public class SearchResultsPage {
 
     public void applyFilters(String county, String maxPrice, String maxArea, String apartmentSize) throws InterruptedException {
         System.out.println("Applying filters");
-
-        //Create "FiltersSegment" Objects
-        filtersSegment = new FiltersSegment(driver);
 
         //Applying filters
         filtersSegment.clickOnDetailedSearch();
@@ -57,7 +55,6 @@ public class SearchResultsPage {
 
     public List<String> getAdvertInfo(Integer advertOnRow) {
         System.out.println("Getting advert info");
-        hp = new HelperMethods(driver);
 
         //Refresh page
         driver.navigate().refresh();

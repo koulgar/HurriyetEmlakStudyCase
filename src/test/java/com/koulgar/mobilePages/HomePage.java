@@ -18,11 +18,11 @@ public class HomePage {
         System.out.println("Creating \"HomePage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        hp = new HelperMethods(driver);
     }
 
     public void clickOnSearchBar() {
         System.out.println("Clicking on search bar");
-        hp = new HelperMethods(driver);
 
         //Writing word to be searched to search bar and submitting
         hp.waitScrollAndClickOnElement(searchBar);

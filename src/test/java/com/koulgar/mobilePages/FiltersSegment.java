@@ -2,10 +2,8 @@ package com.koulgar.mobilePages;
 
 import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -39,19 +37,17 @@ public class FiltersSegment {
     private WebElement submitFiltersButton;
 
     private WebDriver driver;
-    private Actions actions;
-    private JavascriptExecutor js;
     private HelperMethods hp;
 
     public FiltersSegment(WebDriver driver) {
         System.out.println("Creating \"SearchResultsPage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.hp = new HelperMethods(driver);
     }
 
     public void clickOnDetailedSearch() {
         System.out.println("Starting detailed search");
-        hp = new HelperMethods(driver);
 
         //clicking on detailed search
         hp.waitScrollAndClickOnElement(detailedSearchButton);
@@ -59,7 +55,6 @@ public class FiltersSegment {
 
     public void specifyLocation(String county) {
         System.out.println("Specifying county");
-        hp = new HelperMethods(driver);
 
         //clicking on select county box
         hp.waitScrollAndClickOnElement(selectLocationBox);
@@ -81,7 +76,6 @@ public class FiltersSegment {
 
     public void specifyPriceRange(String maxPrice) {
         System.out.println("Specifying price range");
-        hp = new HelperMethods(driver);
 
         //Clicking on price range button
         hp.waitScrollAndClickOnElement(priceRangeBox);
@@ -97,7 +91,6 @@ public class FiltersSegment {
 
     public void specifyApartmentSize(String apartmentSize) {
         System.out.println("Specifying apartment size");
-        hp = new HelperMethods(driver);
 
         //clicking on apartment size button
         hp.waitScrollAndClickOnElement(apartmentSizeBox);
@@ -113,7 +106,6 @@ public class FiltersSegment {
 
     public void specifyApartmentArea(String maxArea) {
         System.out.println("Specifying apartment area");
-        hp = new HelperMethods(driver);
 
         //clicking on aparment size button
         hp.waitScrollAndClickOnElement(apartmentAreaBox);
@@ -129,8 +121,6 @@ public class FiltersSegment {
 
     public void submitFilters() {
         System.out.println("Submitting filters");
-        hp = new HelperMethods(driver);
-        actions = new Actions(driver);
 
         hp.waitScrollAndClickOnElement(submitFiltersButton);
     }

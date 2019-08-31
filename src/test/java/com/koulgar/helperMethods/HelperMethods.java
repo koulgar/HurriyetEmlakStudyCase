@@ -13,9 +13,13 @@ import java.util.List;
 public class HelperMethods {
 
     private WebDriver driver;
+    private JavascriptExecutor js;
+    private Actions actions;
 
     public HelperMethods(WebDriver driver) {
         this.driver = driver;
+        this.js = (JavascriptExecutor) driver;
+        this.actions = new Actions(driver);
     }
 
     public WebElement driverWait(Integer seconds, WebElement webElement) {
@@ -27,13 +31,11 @@ public class HelperMethods {
     }
 
     public void waitForVisibilityAndScrollToElement(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
         element = driverWait(10,element);
         js.executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0, -window.innerHeight / 3);", element);
     }
 
     public void clickOnElement(WebElement element) {
-        Actions actions = new Actions(driver);
         actions.click(element).perform();
     }
 
@@ -43,12 +45,10 @@ public class HelperMethods {
     }
 
     public void sendKeysOnElement(String keysToSend) {
-        Actions actions = new Actions(driver);
         actions.sendKeys(keysToSend).perform();
     }
 
     public void sendKeysOnElement(Keys keysToSend) {
-        Actions actions = new Actions(driver);
         actions.sendKeys(keysToSend).perform();
     }
 

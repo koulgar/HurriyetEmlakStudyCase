@@ -22,11 +22,11 @@ public class SearchResultsPage {
         System.out.println("Creating \"SearchResultPage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.hp = new HelperMethods(driver);
     }
 
     public void selectAdvert(Integer advertOnRow) {
         System.out.println("Selecting proper advert");
-        hp = new HelperMethods(driver);
 
         //Selecting proper advert
         WebElement desiredAdvertToSelect = getAdvertFromList(advertList, advertOnRow);
@@ -36,7 +36,6 @@ public class SearchResultsPage {
 
     public List<String> getAdvertInfo(Integer advertOnRow) {
         System.out.println("Getting advert info");
-        hp = new HelperMethods(driver);
 
         //Selecting filtered advert result
         WebElement desiredAdvertToGetInfo = getAdvertFromList(advertList, advertOnRow);

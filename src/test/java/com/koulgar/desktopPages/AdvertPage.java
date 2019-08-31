@@ -25,11 +25,11 @@ public class AdvertPage {
         System.out.println("Creating \"AdvertizementPage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.hp = new HelperMethods(driver);
     }
 
     public List<String> getPhoneNumber() {
         System.out.println("Getting phone number");
-        hp = new HelperMethods(driver);
 
         //Moving to element that reveals phone number
         hp.waitScrollAndClickOnElement(revealPhoneNumberButton);

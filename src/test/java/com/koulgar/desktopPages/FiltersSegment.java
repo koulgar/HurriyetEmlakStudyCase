@@ -2,10 +2,8 @@ package com.koulgar.desktopPages;
 
 import com.koulgar.helperMethods.HelperMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -39,19 +37,17 @@ public class FiltersSegment {
     private WebElement filteredSearchSubmitButton;
 
     private WebDriver driver;
-    private Actions actions;
     private HelperMethods hp;
-    private JavascriptExecutor js;
 
     public FiltersSegment(WebDriver driver) {
         System.out.println("Creating \"SearchResultPage\" Objects..");
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.hp = new HelperMethods(driver);
     }
 
     private void selectRentalType(String rentalType) {
         System.out.println("selecting rental type");
-        hp = new HelperMethods(driver);
 
         //Select rental Type
         WebElement rentalTypeEl = driver.findElement(By.xpath("//li//a[@title='" + rentalType + "']"));
@@ -60,7 +56,6 @@ public class FiltersSegment {
 
     private void selectLocation(String location) {
         System.out.println("selecting location");
-        hp = new HelperMethods(driver);
 
         //Scroll down to element
         hp.waitForVisibilityAndScrollToElement(selectLocationBox);
@@ -82,7 +77,6 @@ public class FiltersSegment {
 
     private void selectArea(String area) {
         System.out.println("selecting area");
-        hp = new HelperMethods(driver);
 
         //If area box is not active click on it
         hp.waitForVisibilityAndScrollToElement(specifyAreaBox);
@@ -98,7 +92,6 @@ public class FiltersSegment {
 
     private void selectPrice(String maxPrice) {
         System.out.println("selecting price");
-        hp = new HelperMethods(driver);
 
         //If price range box is not active click on it
         hp.waitForVisibilityAndScrollToElement(specifyPriceBox);
@@ -113,7 +106,6 @@ public class FiltersSegment {
 
     private void selectApartmentSize(String apartmentSize) {
         System.out.println("selecting size");
-        hp = new HelperMethods(driver);
 
         //If size box is not active click on it
         hp.waitForVisibilityAndScrollToElement(selectApartmentSizeBox);
@@ -129,7 +121,6 @@ public class FiltersSegment {
 
     private void submitFilters() {
         System.out.println("submitting filters");
-        hp = new HelperMethods(driver);
 
         //Click on submit button
         hp.clickOnElement(filteredSearchSubmitButton);
