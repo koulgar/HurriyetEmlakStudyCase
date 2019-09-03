@@ -7,6 +7,7 @@
   * [Prerequisites](#prerequisites)
   * [Setup](#setup)
   * [Run](#run)
+  * [Running Tests with Docker](#running-tests-with-docker)
 * [Getting Started with Test Cases](#getting-started-with-test-cases)
   * [Cloning Project from Github](#cloning-project-from-github)
   * [Installing Maven](#installing-maven)
@@ -51,10 +52,20 @@
   $  docker run --rm -ti --name zalenium -p 4444:4444 \
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v /tmp/videos:/home/seluser/videos \
-      --privileged dosel/zalenium start --desiredContainers 8
+      --privileged dosel/zalenium start
 ```
 If everything is fine you should see something like this in your terminal.(with "--desiredContainers 8")
 ![alt text](https://i.ibb.co/vPX0Y2x/nodes.png "created nodes 8")
+
+### Running Tests with Docker
+* In case of you'd like to run tests with docker instead of maven or from IDE, docker image of tests can be found on [koulgar/hurriyettest](https://cloud.docker.com/u/koulgar/repository/docker/koulgar/hurriyettest) and can be pulled and runned with commands such as;
+```
+  # Pull Docker Image 
+  $ docker pull koulgar/hurriyettest
+  
+  # Run Docker Image
+  $ docker run --rm -ti --net=host koulgar/hurriyettest
+```
 
 ## Getting Started with Test Cases
 * This part explains how to clone this project from Github and run it on your system and in case of it's running too slow on your system will contain additional information to reduce source usage.
