@@ -54,7 +54,7 @@
       -v /tmp/videos:/home/seluser/videos \
       --privileged dosel/zalenium start
 ```
-If everything is fine you should see something like this in your terminal.(with "--desiredContainers 8")
+If everything is fine you should see something like this in your terminal.(this image generated with "--desiredContainers 8" parameter.)
 ![alt text](https://i.ibb.co/vPX0Y2x/nodes.png "created nodes 8")
 
 ### Running Tests with Docker
